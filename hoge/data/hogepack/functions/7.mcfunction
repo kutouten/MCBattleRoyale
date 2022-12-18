@@ -9,6 +9,8 @@ execute if score op SHC matches 4 run title @a actionbar {"color":"#a52a2a","tex
 execute if score op SHC matches 1 run effect give @a minecraft:instant_health 1
 execute if score op SHC matches 1 run effect give @a minecraft:saturation 1
 time set 6000
+#カウントダウン用のタイマー(1以上なら1減らす)
+execute if score #countdown SHC matches 1.. run scoreboard players remove #countdown SHC 1
 
 #リンゴとガラス瓶が作業台の上にあるとき、リンゴにタグ（apple_bottle）を付けます
 execute as @e[type=item,nbt=!{Item:{tag:{Crafted:1b}}},nbt={Item:{id:"minecraft:apple",Count:2b}}] at @s if block ~ ~-1 ~ crafting_table if entity @e[type=item,distance=..0.5,nbt={Item:{id:"minecraft:glass_bottle",Count:1b}}] run tag @s add apple_bottle
