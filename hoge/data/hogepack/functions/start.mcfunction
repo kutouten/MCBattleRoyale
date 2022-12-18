@@ -12,3 +12,5 @@ give @a minecraft:compass 1
 schedule function hogepack:timer 150s append
 schedule function hogepack:timer2 150s append
 scoreboard players set op SHC 2
+#countdownが常時実行されないように
+scoreboard players set #countdown SHC -1

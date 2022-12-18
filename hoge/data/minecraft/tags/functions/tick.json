@@ -1,6 +1,7 @@
 {
 "replace":false,
 "values":[
-"hogepack:7"
+"hogepack:7",
+"hogepack:countdown"
 ]
 }
