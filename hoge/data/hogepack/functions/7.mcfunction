@@ -8,7 +8,16 @@ execute if score op SHC matches 3 run title @a actionbar [{"text":"安全エリ�
 execute if score op SHC matches 4 run title @a actionbar {"color":"#a52a2a","text":"エリア収縮中!"}
 execute if score op SHC matches 1 run effect give @a minecraft:instant_health 20
 execute if score op SHC matches 1 run effect give @a minecraft:saturation 20
-time set 6000
+
+#最終安置移動用
+execute at @e[tag=ling] run worldborder center ~ ~
+execute as @e[tag=ling] at @s facing entity @e[tag=ling2] feet if entity @p[distance=1..] run teleport @s ^ ^ ^0.1 ~ ~
+execute at @e[tag=ling] if entity @e[tag=ling2,distance=0..2] run spreadplayers ~ ~ 1 50 true @e[tag=ling2]
+
+#待機時
+execute if score op SHC matches 1 run effect give @a minecraft:instant_health 1
+execute if score op SHC matches 1 run effect give @a minecraft:saturation 1
+
 #カウントダウン用のタイマー(1以上なら1減らす)
 execute if score #countdown SHC matches 1.. run scoreboard players remove #countdown SHC 1
 
@@ -34,13 +43,14 @@ execute at @e[tag=shield_battery] run kill @e[sort=nearest,limit=1,type=item,nbt
 execute as @e[tag=shield_battery] run kill
 
 #プロテインクラフト
-execute as @e[type=item,nbt=!{Item:{tag:{Crafted:1b}}},nbt={Item:{id:"minecraft:chicken",Count:1b}}] at @s if block ~ ~-1 ~ crafting_table if entity @e[type=item,distance=..0.5,nbt={Item:{id:"minecraft:beef",Count:1b}}] if entity @e[type=item,distance=..0.5,nbt={Item:{id:"minecraft:porkchop",Count:1b}}] if entity @e[type=item,distance=..0.5,nbt={Item:{id:"minecraft:mutton",Count:1b}}] run tag @s add purotein
+execute as @e[type=item,nbt=!{Item:{tag:{Crafted:1b}}},nbt={Item:{id:"minecraft:chicken",Count:1b}}] at @s if block ~ ~-1 ~ crafting_table if entity @e[type=item,distance=..0.5,nbt={Item:{id:"minecraft:beef",Count:1b}}] if entity @e[type=item,distance=..0.5,nbt={Item:{id:"minecraft:porkchop",Count:1b}}] if entity @e[type=item,distance=..0.5,nbt={Item:{id:"minecraft:mutton",Count:1b}}] if entity @e[type=item,distance=..0.5,nbt={Item:{id:"minecraft:glass_bottle",Count:1b}}] run tag @s add purotein
 execute at @e[tag=purotein] run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:potion",Count:1b,tag:{display:{Name:'[{"text":"プロテイン","italic":false}]',Lore:['{"text":"うおおおおお！"}','{"text":"筋肉の力で強くなれるぞ！"}']},CustomPotionEffects:[{Id:1b,Amplifier:0b,Duration:1200,Ambient:false,ShowParticles:false},{Id:11b,Amplifier:0b,Duration:1200,Ambient:false,ShowParticles:false}],CustomPotionColor:4194304}}}
 execute at @e[tag=purotein] run particle minecraft:enchanted_hit ~ ~ ~ 0 0 0 1 64 force
 execute at @e[tag=purotein] run playsound minecraft:block.anvil.use neutral @a ~ ~ ~ 1 1.6
 execute at @e[tag=purotein] run kill @e[sort=nearest,limit=1,type=item,nbt={Item:{id:"minecraft:beef",Count:1b}}]
 execute at @e[tag=purotein] run kill @e[sort=nearest,limit=1,type=item,nbt={Item:{id:"minecraft:porkchop",Count:1b}}]
 execute at @e[tag=purotein] run kill @e[sort=nearest,limit=1,type=item,nbt={Item:{id:"minecraft:mutton",Count:1b}}]
+execute at @e[tag=purotein] run kill @e[sort=nearest,limit=1,type=item,nbt={Item:{id:"minecraft:glass_bottle",Count:1b}}]
 execute as @e[tag=purotein] run kill @s
 
 #エンパクラフト
