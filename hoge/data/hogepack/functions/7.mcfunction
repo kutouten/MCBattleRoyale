@@ -53,3 +53,34 @@ execute at @e[tag=enpa] run kill @e[sort=nearest,limit=1,type=item,nbt={Item:{id
 execute at @e[tag=enpa] run kill @e[sort=nearest,limit=1,type=item,nbt={Item:{id:"minecraft:bone",Count:1b}}]
 execute at @e[tag=enpa] run kill @e[sort=nearest,limit=1,type=item,nbt={Item:{id:"minecraft:glass",Count:1b}}]
 execute as @e[tag=enpa] run kill @s
+
+#銅ブーツ
+execute as @e[type=item,nbt=!{Item:{tag:{Crafted:1b}}},nbt={Item:{id:"minecraft:copper_ingot",Count:4b}}] at @s if block ~ ~-1 ~ crafting_table run tag @s add doubu-tu
+execute at @e[tag=doubu-tu] run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:leather_boots",Count:1b,tag:{display:{Name:'{"text":"銅のブーツ","italic":false}',color:16744448},Enchantments:[{id:"protection",lvl:1}]}}}
+execute at @e[tag=doubu-tu] run particle minecraft:enchanted_hit ~ ~ ~ 0 0 0 1 64 force
+execute at @e[tag=doubu-tu] run playsound minecraft:block.anvil.use neutral @a ~ ~ ~ 1 1.6
+execute as @e[tag=doubu-tu] run kill @s
+
+#銅ヘルメット
+execute as @e[type=item,nbt=!{Item:{tag:{Crafted:1b}}},nbt={Item:{id:"minecraft:copper_ingot",Count:1b}}] at @s if block ~ ~-1 ~ crafting_table if entity @e[type=item,distance=..0.5,nbt={Item:{id:"minecraft:leather_boots",Count:1b,tag:{display:{Name:'{"text":"銅のブーツ","italic":false}',color:16744448},Enchantments:[{id:"protection",lvl:1}]}}}] run tag @s add douherumetto
+execute at @e[tag=douherumetto] run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:leather_helmet",Count:1b,tag:{display:{Name:'{"text":"銅のヘルメット","italic":false}',color:16744448},Enchantments:[{id:"protection",lvl:1}]}}}
+execute at @e[tag=douherumetto] run particle minecraft:enchanted_hit ~ ~ ~ 0 0 0 1 64 force
+execute at @e[tag=douherumetto] run playsound minecraft:block.anvil.use neutral @a ~ ~ ~ 1 1.6
+execute at @e[tag=douherumetto] run kill @e[sort=nearest,limit=1,type=item,nbt={Item:{id:"minecraft:leather_boots",Count:1b,tag:{display:{Name:'{"text":"銅のブーツ","italic":false}',color:16744448},Enchantments:[{id:"protection",lvl:1}]} }}]
+execute as @e[tag=douherumetto] run kill @s
+
+#銅レギンス
+execute as @e[type=item,nbt=!{Item:{tag:{Crafted:1b}}},nbt={Item:{id:"minecraft:copper_ingot",Count:2b}}] at @s if block ~ ~-1 ~ crafting_table if entity @e[type=item,distance=..0.5,nbt={Item:{id:"minecraft:leather_helmet",Count:1b,tag:{display:{Name:'{"text":"銅のヘルメット","italic":false}',color:16744448},Enchantments:[{id:"protection",lvl:1}]}}}] run tag @s add doureginsu
+execute at @e[tag=doureginsu] run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:leather_leggings",Count:1b,tag:{display:{Name:'{"text":"銅のレギンス","italic":false}',color:16744448},Enchantments:[{id:"protection",lvl:1}]}}}
+execute at @e[tag=doureginsu] run particle minecraft:enchanted_hit ~ ~ ~ 0 0 0 1 64 force
+execute at @e[tag=doureginsu] run playsound minecraft:block.anvil.use neutral @a ~ ~ ~ 1 1.6
+execute at @e[tag=doureginsu] run kill @e[sort=nearest,limit=1,type=item,nbt={Item:{id:"minecraft:leather_helmet",Count:1b,tag:{display:{Name:'{"text":"銅のヘルメット","italic":false}',color:16744448},Enchantments:[{id:"protection",lvl:1}]} }}]
+execute as @e[tag=doureginsu] run kill @s
+
+#銅チェストプレート
+execute as @e[type=item,nbt=!{Item:{tag:{Crafted:2b}}},nbt={Item:{id:"minecraft:copper_ingot",Count:1b}}] at @s if block ~ ~-1 ~ crafting_table if entity @e[type=item,distance=..0.5,nbt={Item:{id:"minecraft:leather_leggings",Count:1b,tag:{display:{Name:'{"text":"銅のレギンス","italic":false}',color:16744448},Enchantments:[{id:"protection",lvl:1}]}}}] run tag @s add doutyesuto
+execute at @e[tag=doutyesuto] run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:leather_chestplate",Count:1b,tag:{display:{Name:'{"text":"チェストプレート","italic":false}',color:16744448},Enchantments:[{id:"protection",lvl:1}]}}}
+execute at @e[tag=doutyesuto] run particle minecraft:enchanted_hit ~ ~ ~ 0 0 0 1 64 force
+execute at @e[tag=doutyesuto] run playsound minecraft:block.anvil.use neutral @a ~ ~ ~ 1 1.6
+execute at @e[tag=doutyesuto] run kill @e[sort=nearest,limit=1,type=item,nbt={Item:{id:"minecraft:leather_leggings",Count:1b,tag:{display:{Name:'{"text":"銅のレギンス","italic":false}',color:16744448},Enchantments:[{id:"protection",lvl:1}]} }}]
+execute as @e[tag=doutyesuto] run kill @s
