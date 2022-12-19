@@ -34,7 +34,7 @@ execute at @e[tag=shield_battery] run kill @e[sort=nearest,limit=1,type=item,nbt
 execute as @e[tag=shield_battery] run kill
 
 #プロテインクラフト
-execute as @e[type=item,nbt=!{Item:{tag:{Crafted:1b}}},nbt={Item:{id:"minecraft:chicken",Count:1b}}] at @s if block ~ ~-1 ~ crafting_table if entity @e[type=item,distance=..0.5,nbt={Item:{id:"minecraft:beef",Count:1b}}] if entity @e[type=item,distance=..0.5,nbt={Item:{id:"minecraft:porkchop",Count:1b}}] if entity @e[type=item,distance=..0.5,nbt={Item:{id:"minecraft:mutton",Count:1b}}] run tag @s purotein
+execute as @e[type=item,nbt=!{Item:{tag:{Crafted:1b}}},nbt={Item:{id:"minecraft:chicken",Count:1b}}] at @s if block ~ ~-1 ~ crafting_table if entity @e[type=item,distance=..0.5,nbt={Item:{id:"minecraft:beef",Count:1b}}] if entity @e[type=item,distance=..0.5,nbt={Item:{id:"minecraft:porkchop",Count:1b}}] if entity @e[type=item,distance=..0.5,nbt={Item:{id:"minecraft:mutton",Count:1b}}] run tag @s add purotein
 execute at @e[tag=purotein] run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:potion",Count:1b,tag:{display:{Name:'[{"text":"プロテイン","italic":false}]',Lore:['{"text":"うおおおおお！"}','{"text":"筋肉の力で強くなれるぞ！"}']},CustomPotionEffects:[{Id:1b,Amplifier:0b,Duration:1200,Ambient:false,ShowParticles:false},{Id:11b,Amplifier:0b,Duration:1200,Ambient:false,ShowParticles:false}],CustomPotionColor:4194304}}}
 execute at @e[tag=purotein] run particle minecraft:enchanted_hit ~ ~ ~ 0 0 0 1 64 force
 execute at @e[tag=purotein] run playsound minecraft:block.anvil.use neutral @a ~ ~ ~ 1 1.6
