@@ -94,3 +94,13 @@ execute at @e[tag=doutyesuto] run particle minecraft:enchanted_hit ~ ~ ~ 0 0 0 1
 execute at @e[tag=doutyesuto] run playsound minecraft:block.anvil.use neutral @a ~ ~ ~ 1 1.6
 execute at @e[tag=doutyesuto] run kill @e[sort=nearest,limit=1,type=item,nbt={Item:{id:"minecraft:leather_leggings",Count:1b,tag:{display:{Name:'{"text":"銅のレギンス","italic":false}',color:16744448},Enchantments:[{id:"protection",lvl:1}]} }}]
 execute as @e[tag=doutyesuto] run kill @s
+
+#興奮剤
+execute as @e[type=item,nbt=!{Item:{tag:{Crafted:1b}}},nbt={Item:{id:"minecraft:sugar",Count:3b}}] at @s if block ~ ~-1 ~ crafting_table if entity @e[type=item,distance=..0.5,nbt={Item:{id:"minecraft:gunpowder",Count:1b}}] if entity @e[type=item,distance=..0.5,nbt={Item:{id:"minecraft:wheat_seeds",Count:1b}}] if entity @e[type=item,distance=..0.5,nbt={Item:{id:"minecraft:glass_bottle",Count:1b}}] run tag @s add okutan
+execute at @e[tag=okutan] run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:splash_potion",Count:3b,tag:{display:{Name:'[{"text":"興奮剤","italic":false}]',Lore:['{"text":"「これじゃ足りねぇ。まだまだアゲるぞ！」"}','{"text":"副作用としてダメージを食らうのでそれで死なないようにネ"}']},CustomPotionEffects:[{Id:1b,Amplifier:2b,Duration:140,Ambient:false,ShowParticles:true},{Id:8b,Amplifier:2b,Duration:140,Ambient:false,ShowParticles:true},{Id:7b,Amplifier:0b,Duration:1,Ambient:false,ShowParticles:true}],CustomPotionColor:65280}}}
+execute at @e[tag=okutan] run particle minecraft:enchanted_hit ~ ~ ~ 0 0 0 1 64 force
+execute at @e[tag=okutan] run playsound minecraft:block.anvil.use neutral @a ~ ~ ~ 1 1.6
+execute at @e[tag=okutan] run kill @e[sort=nearest,limit=1,type=item,nbt={Item:{id:"minecraft:gunpowder",Count:1b}}]
+execute at @e[tag=okutan] run kill @e[sort=nearest,limit=1,type=item,nbt={Item:{id:"minecraft:glass_bottle",Count:1b}}]
+execute at @e[tag=okutan] run kill @e[sort=nearest,limit=1,type=item,nbt={Item:{id:"minecraft:wheat_seeds",Count:1b}}]
+execute as @e[tag=okutan] run kill @s
