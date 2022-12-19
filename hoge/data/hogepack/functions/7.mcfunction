@@ -6,8 +6,8 @@ execute if score op SHC matches 1 run title @a actionbar {"color":"#6a5acd","tex
 execute if score op SHC matches 2 run title @a actionbar {"color":"#3cb371","text":"エリア拡大中..."}
 execute if score op SHC matches 3 run title @a actionbar [{"text":"安全エリア収縮まで "},{"color":"#B11C4F","score":{"name":"timer","objective":"SHC"}},{"text":"秒","color":"#B11C4F"}]
 execute if score op SHC matches 4 run title @a actionbar {"color":"#a52a2a","text":"エリア収縮中!"}
-execute if score op SHC matches 1 run effect give @a minecraft:instant_health 1
-execute if score op SHC matches 1 run effect give @a minecraft:saturation 1
+execute if score op SHC matches 1 run effect give @a minecraft:instant_health 20
+execute if score op SHC matches 1 run effect give @a minecraft:saturation 20
 time set 6000
 #カウントダウン用のタイマー(1以上なら1減らす)
 execute if score #countdown SHC matches 1.. run scoreboard players remove #countdown SHC 1
