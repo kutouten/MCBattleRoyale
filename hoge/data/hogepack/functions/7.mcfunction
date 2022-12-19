@@ -15,7 +15,7 @@ execute if score #countdown SHC matches 1.. run scoreboard players remove #count
 #リンゴとガラス瓶が作業台の上にあるとき、リンゴにタグ（apple_bottle）を付けます
 execute as @e[type=item,nbt=!{Item:{tag:{Crafted:1b}}},nbt={Item:{id:"minecraft:apple",Count:2b}}] at @s if block ~ ~-1 ~ crafting_table if entity @e[type=item,distance=..0.5,nbt={Item:{id:"minecraft:glass_bottle",Count:1b}}] run tag @s add apple_bottle
 #タグ（apple_bottle）を持つエンティティから~ ~1 ~の位置にポーションを召喚します
-execute at @e[tag=apple_bottle] run summon minecraft:item ~ ~1 ~ {Item:{id:"minecraft:potion",Count:1b,tag:{display:{Name:'[{"text":"リンゴジュース","italic":false}]',Lore:['{"text":"のんだら元気いっぱい！"}']},CustomPotionEffects:[{Id:6,Amplifier:4b,Duration:0,Ambient:false,ShowParticles:true}],CustomPotionColor:16733695,Tags:[Crafted]}}}
+execute at @e[tag=apple_bottle] run summon minecraft:item ~ ~1 ~ {Item:{id:"minecraft:potion",Count:1b,tag:{display:{Name:'[{"text":"リンゴジュース","italic":false}]',Lore:['{"text":"のんだら元気いっぱい！"}']},CustomPotionEffects:[{Id:6b,Amplifier:4b,Duration:0,Ambient:false,ShowParticles:true}],CustomPotionColor:16733695,Tags:[Crafted]}}}
 #タグ（apple_bottle）を持つエンティティから~ ~1 ~の位置にパーティクルを出します
 execute at @e[tag=apple_bottle] run particle minecraft:enchanted_hit ~ ~ ~ 0 0 0 1 64 force
 #タグ（apple_bottle）を持つエンティティの位置から金床の音を出します
@@ -25,17 +25,16 @@ execute at @e[tag=apple_bottle] run kill @e[sort=nearest,limit=1,type=item,nbt={
 #タグ（apple_bottle）を持つエンティティをkillします
 execute as @e[tag=apple_bottle] run kill
 
-
 #シールドバッテリークラフト
 execute as @e[type=item,nbt=!{Item:{tag:{Crafted:1b}}},nbt={Item:{id:"minecraft:lapis_block",Count:1b}}] at @s if block ~ ~-1 ~ crafting_table if entity @e[type=item,distance=..0.5,nbt={Item:{id:"minecraft:glass_bottle",Count:1b}}] run tag @s add shield_battery
-execute at @e[tag=shield_battery] run summon minecraft:item ~ ~1 ~ {Item:{id:"minecraft:potion",Count:1b,tag:{display:{Name:'[{"text":"シールドバッテリー","italic":false}]',Lore:['{"text":"シールドをリチャージ中..."}']},CustomPotionEffects:[{Id:22,Amplifier:4b,Duration:36000,Ambient:false,ShowParticles:false}],CustomPotionColor:170,Tags:[Crafted]}}}
+execute at @e[tag=shield_battery] run summon minecraft:item ~ ~1 ~ {Item:{id:"minecraft:potion",Count:1b,tag:{display:{Name:'[{"text":"シールドバッテリー","italic":false}]',Lore:['{"text":"シールドをリチャージ中..."}']},CustomPotionEffects:[{Id:22b,Amplifier:4b,Duration:36000,Ambient:false,ShowParticles:false}],CustomPotionColor:170,Tags:[crafted]}}}
 execute at @e[tag=shield_battery] run particle minecraft:enchanted_hit ~ ~ ~ 0 0 0 1 64 force
 execute at @e[tag=shield_battery] run playsound minecraft:block.anvil.use neutral @a ~ ~ ~ 1 1.6
 execute at @e[tag=shield_battery] run kill @e[sort=nearest,limit=1,type=item,nbt={Item:{id:"minecraft:glass_bottle",Count:1b}}]
 execute as @e[tag=shield_battery] run kill
 
 #プロテインクラフト
-execute as @e[type=item,nbt=!{Item:{tag:{Crafted:1b}}},nbt={Item:{id:"minecraft:chicken",Count:1b}}] at @s if block ~ ~-1 ~ crafting_table if entity @e[type=item,distance=..0.5,nbt={Item:{id:"minecraft:beef",Count:1b}}] if entity @e[type=item,distance=..0.5,nbt={Item:{id:"minecraft:porkchop",Count:1b}}] if entity @e[type=item,distance=..0.5,nbt={Item:{id:"minecraft:mutton",Count:1b}}] run tag @s add purotein
+execute as @e[type=item,nbt=!{Item:{tag:{Crafted:1b}}},nbt={Item:{id:"minecraft:chicken",Count:1b}}] at @s if block ~ ~-1 ~ crafting_table if entity @e[type=item,distance=..0.5,nbt={Item:{id:"minecraft:beef",Count:1b}}] if entity @e[type=item,distance=..0.5,nbt={Item:{id:"minecraft:porkchop",Count:1b}}] if entity @e[type=item,distance=..0.5,nbt={Item:{id:"minecraft:mutton",Count:1b}}] run tag @s purotein
 execute at @e[tag=purotein] run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:potion",Count:1b,tag:{display:{Name:'[{"text":"プロテイン","italic":false}]',Lore:['{"text":"うおおおおお！"}','{"text":"筋肉の力で強くなれるぞ！"}']},CustomPotionEffects:[{Id:1b,Amplifier:0b,Duration:1200,Ambient:false,ShowParticles:false},{Id:11b,Amplifier:0b,Duration:1200,Ambient:false,ShowParticles:false}],CustomPotionColor:4194304}}}
 execute at @e[tag=purotein] run particle minecraft:enchanted_hit ~ ~ ~ 0 0 0 1 64 force
 execute at @e[tag=purotein] run playsound minecraft:block.anvil.use neutral @a ~ ~ ~ 1 1.6
@@ -44,5 +43,13 @@ execute at @e[tag=purotein] run kill @e[sort=nearest,limit=1,type=item,nbt={Item
 execute at @e[tag=purotein] run kill @e[sort=nearest,limit=1,type=item,nbt={Item:{id:"minecraft:mutton",Count:1b}}]
 execute as @e[tag=purotein] run kill @s
 
-#プロテインクラフト
-execute as @e[type=item,nbt=!{Item:{tag:{Crafted:1b}}},nbt={Item:{id:"minecraft:chicken",Count:1b}}] at @s if block ~ ~-1 ~ crafting_table if entity @e[type=item,distance=..0.5,nbt={Item:{id:"minecraft:beef",Count:1b}}] if entity @e[type=item,distance=..0.5,nbt={Item:{id:"minecraft:porkchop",Count:1b}}] if entity @e[type=item,distance=..0.5,nbt={Item:{id:"minecraft:mutton",Count:1b}}] run tag @s purotein
+#エンパクラフト
+execute as @e[type=item,nbt=!{Item:{tag:{Crafted:1b}}},nbt={Item:{id:"minecraft:rotten_flesh",Count:1b}}] at @s if block ~ ~-1 ~ crafting_table if entity @e[type=item,distance=..0.5,nbt={Item:{id:"minecraft:string",Count:1b}}] if entity @e[type=item,distance=..0.5,nbt={Item:{id:"minecraft:bone",Count:1b}}] if entity @e[type=item,distance=..0.5,nbt={Item:{id:"minecraft:gunpowder",Count:1b}}] if entity @e[type=item,distance=..0.5,nbt={Item:{id:"minecraft:glass",Count:1b}}] run tag @s add enpa
+execute at @e[tag=enpa] run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:ender_pearl",Count:1b}}
+execute at @e[tag=enpa] run particle minecraft:enchanted_hit ~ ~ ~ 0 0 0 1 64 force
+execute at @e[tag=enpa] run playsound minecraft:block.anvil.use neutral @a ~ ~ ~ 1 1.6
+execute at @e[tag=enpa] run kill @e[sort=nearest,limit=1,type=item,nbt={Item:{id:"minecraft:gunpowder",Count:1b}}]
+execute at @e[tag=enpa] run kill @e[sort=nearest,limit=1,type=item,nbt={Item:{id:"minecraft:string",Count:1b}}]
+execute at @e[tag=enpa] run kill @e[sort=nearest,limit=1,type=item,nbt={Item:{id:"minecraft:bone",Count:1b}}]
+execute at @e[tag=enpa] run kill @e[sort=nearest,limit=1,type=item,nbt={Item:{id:"minecraft:glass",Count:1b}}]
+execute as @e[tag=enpa] run kill @s
