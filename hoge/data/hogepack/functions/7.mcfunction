@@ -2,8 +2,9 @@ gamemode spectator @a[scores={death=1}]
 execute store result score #GLOBAL alive if entity @a[gamemode=survival]
 execute if score #1 alive matches 1 if score #GLOBAL alive matches 1 run function hogepack:end
 execute at @a run fill ~-3 0 ~-3 ~3 0 ~3 minecraft:bedrock 
+
+#op SHC アクションバーに表示するものたち
 execute if score op SHC matches 1 run title @a actionbar {"color":"#6a5acd","text":"現在待機中..."}
-execute if score op SHC matches 2 run title @a actionbar {"color":"#3cb371","text":"エリア拡大中..."}
 execute if score op SHC matches 3 run title @a actionbar [{"text":"安全エリア収縮まで "},{"color":"#B11C4F","score":{"name":"timer","objective":"SHC"}},{"text":"秒","color":"#B11C4F"}]
 execute if score op SHC matches 4 run title @a actionbar {"color":"#a52a2a","text":"エリア収縮中!"}
 execute if score op SHC matches 1 run effect give @a minecraft:instant_health 20

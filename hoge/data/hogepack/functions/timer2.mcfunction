@@ -1,1 +1,0 @@
-scoreboard players set op SHC 3

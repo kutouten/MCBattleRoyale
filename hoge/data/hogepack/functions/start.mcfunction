@@ -6,10 +6,9 @@ effect give @a minecraft:resistance 20 255 true
 effect give @a minecraft:invisibility 150 1 true
 team modify kill friendlyFire true
 scoreboard players set #1 alive 1
-scoreboard players set op SHC 2
+scoreboard players set op SHC 3
 schedule function hogepack:6 450s append
-schedule function hogepack:timer 150s append
-schedule function hogepack:timer2 150s append
+schedule function hogepack:timer 1s append
 
 #支給品
 give @a minecraft:cooked_beef 16

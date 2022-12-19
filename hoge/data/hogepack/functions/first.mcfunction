@@ -15,7 +15,7 @@ team add ling
 summon minecraft:armor_stand 0 256 0 {NoAI:1b,NoGravity:1b,Marker:1b,Invisible:1b,Tags:[ling]}
 team join ling @e[type=minecraft:armor_stand,tag=ling]
 scoreboard players set op SHC 1
-scoreboard players set timer SHC 420
+scoreboard players set timer SHC 570
 #countdownが常時実行されないように
 scoreboard players set #countdown SHC -1
 
