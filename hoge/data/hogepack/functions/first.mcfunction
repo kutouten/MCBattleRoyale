@@ -44,3 +44,7 @@ bossbar set minecraft:3 color green
 bossbar set minecraft:4 color red
 scoreboard players set 3 SHC 11700
 scoreboard players set 4 SHC 18000
+
+#lootsheep
+execute as @e[limit=20] run summon minecraft:sheep ~ ~ ~ {CustomName:'{"text":"jeb_"}',DeathLootTable:"hogepack:shc",Glowing:true,Health:100.0f,Attributes:[{Name:"generic.max_health",Base:100.0d},{Name:"generic.movement_speed",Base:0.00d}]}
+spreadplayers ~ ~ 50 1000 false @e[name=jeb_]

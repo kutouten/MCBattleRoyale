@@ -1,39 +1,47 @@
 {
-  "type": "minecraft:chest",
+  "type": "minecraft:entity",
   "pools": [
     {
       "rolls": 4,
       "entries": [
         {
           "type": "minecraft:item",
+          "weight": 3,
           "name": "minecraft:diamond_sword"
         },
         {
           "type": "minecraft:item",
+          "weight": 2,
           "name": "minecraft:diamond_axe"
         },
         {
           "type": "minecraft:item",
+          "weight": 3,
           "name": "minecraft:diamond_helmet"
         },
         {
           "type": "minecraft:item",
+          "weight": 2,
           "name": "minecraft:diamond_chestplate"
         },
         {
           "type": "minecraft:item",
+          "weight": 3,
           "name": "minecraft:diamond_leggings"
         },
         {
           "type": "minecraft:item",
+          "weight": 3,
           "name": "minecraft:diamond_boots"
         },
         {
           "type": "minecraft:item",
+          "weight": 1,
           "name": "minecraft:totem_of_undying"
         },
         {
           "type": "minecraft:item",
+          "weight": 4,
           "name": "minecraft:ender_pearl",
           "functions": [
             {
@@ -44,14 +52,10 @@
               }
             }
           ]
-        }
-      ]
-    },
-    {
-      "rolls": 1,
-      "entries": [
+        },
         {
           "type": "minecraft:item",
+          "weight": 3,
           "name": "minecraft:tnt",
           "functions": [
             {
@@ -62,40 +66,43 @@
               }
             }
           ]
-        }
-      ]
-    },
-    {
-      "rolls": 1,
-      "entries": [
+        },
         {
           "type": "minecraft:item",
+          "weight": 3,
           "name": "minecraft:bow",
           "functions": [
             {
               "function": "minecraft:enchant_with_levels",
               "levels": {
                 "min": 1,
-                "max": 15
+                "max": 18
               }
             }
           ]
-        }
-      ]
-    },
-    {
-      "rolls": 1,
-      "entries": [
+        },
         {
           "type": "minecraft:item",
+          "weight": 3,
           "name": "minecraft:crossbow",
           "functions": [
             {
               "function": "minecraft:enchant_with_levels",
               "levels": {
                 "min": 1,
-                "max": 15
+                "max": 18
               }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 3,
+          "name": "minecraft:potion",
+          "functions": [
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{display:{Name:'{\"text\":\"透明化ポーション\",\"italic\":false}'},CustomPotionEffects:[{Id:14b,Amplifier:1b,Duration:600,Ambient:false,ShowParticles:false}],CustomPotionColor:5592575}"
             }
           ]
         }
@@ -106,11 +113,14 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:potion",
+          "name": "minecraft:arrow",
           "functions": [
             {
-              "function": "minecraft:set_nbt",
-              "tag": "{display:{Name:'{\"text\":\"透明化ポーション\",\"italic\":false}'},CustomPotionEffects:[{Id:14b,Amplifier:1b,Duration:600,Ambient:false,ShowParticles:false}],CustomPotionColor:5592575}"
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 8,
+                "max": 24
+              }
             }
           ]
         }
