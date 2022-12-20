@@ -27,3 +27,20 @@ gamerule doWeatherCycle false
 weather clear
 time set 6000
 gamerule doDaylightCycle false
+
+#bossbar
+bossbar add 1 "現在待機中"
+bossbar add 3 "安全エリア収縮まで残り"
+bossbar add 4 "エリア収縮中"
+bossbar set minecraft:3 max 11100
+bossbar set minecraft:4 max 18000
+bossbar set minecraft:3 value 11400
+bossbar set minecraft:4 value 18000
+bossbar set minecraft:1 players @a
+bossbar set minecraft:3 players @a
+bossbar set minecraft:4 players @a
+bossbar set minecraft:1 color blue
+bossbar set minecraft:3 color green
+bossbar set minecraft:4 color red
+scoreboard players set 3 SHC 11700
+scoreboard players set 4 SHC 18000

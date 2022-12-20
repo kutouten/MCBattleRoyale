@@ -3,10 +3,18 @@ execute store result score #GLOBAL alive if entity @a[gamemode=survival]
 execute if score #1 alive matches 1 if score #GLOBAL alive matches 1 run function hogepack:end
 execute at @a run fill ~-3 0 ~-3 ~3 0 ~3 minecraft:bedrock 
 
-#op SHC アクションバーに表示するものたち
-execute if score op SHC matches 1 run title @a actionbar {"color":"#6a5acd","text":"現在待機中..."}
-execute if score op SHC matches 3 run title @a actionbar [{"text":"安全エリア収縮まで "},{"color":"#B11C4F","score":{"name":"timer","objective":"SHC"}},{"text":"秒","color":"#B11C4F"}]
-execute if score op SHC matches 4 run title @a actionbar {"color":"#a52a2a","text":"エリア収縮中!"}
+#op SHC ボスバーに表示するものたち
+execute if score op SHC matches 1 run bossbar set minecraft:1 visible true
+execute if score op SHC matches 1 run bossbar set minecraft:3 visible false
+execute if score op SHC matches 1 run bossbar set minecraft:4 visible false
+execute if score op SHC matches 3 run bossbar set minecraft:3 visible true
+execute if score op SHC matches 3 run bossbar set minecraft:1 visible false
+execute if score op SHC matches 4 run bossbar set minecraft:4 visible true
+execute if score op SHC matches 4 run scoreboard players remove 4 SHC 1
+execute if score op SHC matches 3 run scoreboard players remove 3 SHC 1
+execute store result bossbar minecraft:3 value run scoreboard players get 3 SHC
+execute store result bossbar minecraft:4 value run scoreboard players get 4 SHC
+
 execute if score op SHC matches 1 run effect give @a minecraft:instant_health 20
 execute if score op SHC matches 1 run effect give @a minecraft:saturation 20
 
