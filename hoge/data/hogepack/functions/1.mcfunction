@@ -3,6 +3,8 @@ scoreboard players set #countdown SHC 120
 tp @a 0 153 0
 #全員サバイバルに。tagのadminを持ってると変わらない
 gamemode survival @a[tag=!admin]
+#サバイバルの人をteam「player」に追加。
+team join player @a[gamemode=survival]
 
 #bossbar
 bossbar add 3 "安全エリア収縮まで残り"
