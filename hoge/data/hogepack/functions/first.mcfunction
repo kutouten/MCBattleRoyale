@@ -32,7 +32,3 @@ gamerule doDaylightCycle false
 bossbar add 1 "現在待機中"
 bossbar set minecraft:1 players @a
 bossbar set minecraft:1 color blue
-
-#lootsheep
-execute as @e[limit=20] run summon minecraft:sheep ~ ~ ~ {CustomName:'{"text":"jeb_"}',DeathLootTable:"hogepack:shc",Glowing:true,Health:100.0f,Attributes:[{Name:"generic.max_health",Base:100.0d},{Name:"generic.movement_speed",Base:0.00d}]}
-spreadplayers ~ ~ 50 1000 false @e[name=jeb_]
