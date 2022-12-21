@@ -4,9 +4,8 @@ fill 3 150 3 -3 150 -3 minecraft:bedrock
 worldborder center 0.5 0.5
 worldborder set 7
 worldborder damage buffer 0
-team add kill
-team modify kill nametagVisibility never
-team modify kill friendlyFire false
+team add player
+team modify player nametagVisibility never
 scoreboard objectives add death deathCount
 scoreboard objectives add alive dummy
 scoreboard objectives add SHC dummy
