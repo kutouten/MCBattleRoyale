@@ -18,6 +18,9 @@ execute store result bossbar minecraft:4 value run scoreboard players get 4 SHC
 execute if score op SHC matches 1 run effect give @a minecraft:instant_health 20
 execute if score op SHC matches 1 run effect give @a minecraft:saturation 20
 
+#bossbarに秒数を表記
+bossbar set 3 name [{"text":"安全エリア収縮開始まで 残り"},{"score":{"name":"timer","objective":"SHC"},"color":"green"},{"text":"秒"}]
+
 #最終安置移動用
 execute at @e[tag=ling] run worldborder center ~ ~
 execute as @e[tag=ling] at @s facing entity @e[tag=ling2] feet if entity @p[distance=1..] run teleport @s ^ ^ ^0.1 ~ ~
