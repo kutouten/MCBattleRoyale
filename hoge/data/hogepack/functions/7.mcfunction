@@ -30,17 +30,17 @@ execute if score op SHC matches 1 run effect give @a minecraft:saturation 1
 #カウントダウン用のタイマー(1以上なら1減らす)
 execute if score #countdown SHC matches 1.. run scoreboard players remove #countdown SHC 1
 
-#リンゴとガラス瓶が作業台の上にあるとき、リンゴにタグ（apple_bottle）を付けます
+#exit_rope
+execute as @a[nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{display:{Name:'{"text":"脱出用ロープ","italic":false}'}}}}] if score @s ninzin matches 1 run spreadplayers ~ ~ 0 1 false @s
+execute as @a[scores={ninzin=1}] run clear @s minecraft:carrot_on_a_stick{display:{Name:'{"text":"脱出用ロープ","italic":false}'}} 1
+execute as @a run scoreboard players set @a[scores={ninzin=1}] ninzin 0
+
+#リンゴジュース
 execute as @e[type=item,nbt=!{Item:{tag:{Crafted:1b}}},nbt={Item:{id:"minecraft:apple",Count:2b}}] at @s if block ~ ~-1 ~ crafting_table if entity @e[type=item,distance=..0.5,nbt={Item:{id:"minecraft:glass_bottle",Count:1b}}] run tag @s add apple_bottle
-#タグ（apple_bottle）を持つエンティティから~ ~1 ~の位置にポーションを召喚します
 execute at @e[tag=apple_bottle] run summon minecraft:item ~ ~1 ~ {Item:{id:"minecraft:potion",Count:1b,tag:{display:{Name:'[{"text":"リンゴジュース","italic":false}]',Lore:['{"text":"のんだら元気いっぱい！"}']},CustomPotionEffects:[{Id:6,Amplifier:4b,Duration:0,Ambient:false,ShowParticles:true}],CustomPotionColor:16733695,Tags:[Crafted]}}}
-#タグ（apple_bottle）を持つエンティティから~ ~1 ~の位置にパーティクルを出します
 execute at @e[tag=apple_bottle] run particle minecraft:enchanted_hit ~ ~ ~ 0 0 0 1 64 force
-#タグ（apple_bottle）を持つエンティティの位置から金床の音を出します
 execute at @e[tag=apple_bottle] run playsound minecraft:block.anvil.use neutral @a ~ ~ ~ 1 1.6
-#タグ（apple_bottle）を持つエンティティから一番近いガラス瓶をkillします
 execute at @e[tag=apple_bottle] run kill @e[sort=nearest,limit=1,type=item,nbt={Item:{id:"minecraft:glass_bottle",Count:1b}}]
-#タグ（apple_bottle）を持つエンティティをkillします
 execute as @e[tag=apple_bottle] run kill
 
 #シールドバッテリークラフト
