@@ -34,7 +34,7 @@ execute if score op SHC matches 1 run effect give @a minecraft:saturation 1
 execute if score #countdown SHC matches 1.. run scoreboard players remove #countdown SHC 1
 
 #exit_rope
-execute as @a[nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{display:{Name:'{"text":"脱出用ロープ","italic":false}'}}}}] if score @s ninzin matches 1 run spreadplayers ~ ~ 0 1 false @s
+execute as @a[nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{display:{Name:'{"text":"脱出用ロープ","italic":false}'}}}}] at @a[nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{display:{Name:'{"text":"脱出用ロープ","italic":false}'}}}}] if score @s ninzin matches 1 run spreadplayers ~ ~ 0 1 false @s
 execute as @a[scores={ninzin=1}] run clear @s minecraft:carrot_on_a_stick{display:{Name:'{"text":"脱出用ロープ","italic":false}'}} 1
 execute as @a[scores={ninzin=1}] run effect give @s minecraft:weakness 3 3
 execute as @a[scores={ninzin=1}] run effect give @a minecraft:blindness 3
