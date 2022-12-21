@@ -120,3 +120,11 @@ execute at @e[tag=okutan] run kill @e[sort=nearest,limit=1,type=item,nbt={Item:{
 execute at @e[tag=okutan] run kill @e[sort=nearest,limit=1,type=item,nbt={Item:{id:"minecraft:glass_bottle",Count:1b}}]
 execute at @e[tag=okutan] run kill @e[sort=nearest,limit=1,type=item,nbt={Item:{id:"minecraft:wheat_seeds",Count:1b}}]
 execute as @e[tag=okutan] run kill @s
+
+#脱出用ロープ
+execute as @e[type=item,nbt=!{Item:{tag:{Crafted:1b}}},nbt={Item:{id:"minecraft:string",Count:2b}}] at @s if block ~ ~-1 ~ crafting_table if entity @e[type=item,distance=..0.5,nbt={Item:{id:"minecraft:feather",Count:1b}}] run tag @s add exit_rope
+execute at @e[tag=exit_rope] run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:carrot_on_a_stick",Count:1b,tag:{display:{Name:'{"text":"脱出用ロープ","italic":false}'}}}}
+execute at @e[tag=exit_rope] run particle minecraft:enchanted_hit ~ ~ ~ 0 0 0 1 64 force
+execute at @e[tag=exit_rope] run playsound minecraft:block.anvil.use neutral @a ~ ~ ~ 1 1.6
+execute at @e[tag=exit_rope] run kill @e[sort=nearest,limit=1,type=item,nbt={Item:{id:"minecraft:feather",Count:1b}}]
+execute as @e[tag=exit_rope] run kill @s

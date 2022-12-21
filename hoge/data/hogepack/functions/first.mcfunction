@@ -9,6 +9,7 @@ team modify player nametagVisibility never
 scoreboard objectives add death deathCount
 scoreboard objectives add alive dummy
 scoreboard objectives add SHC dummy
+scoreboard objectives add ninzin minecraft.used:carrot_on_a_stick
 setworldspawn 0 153 0
 team add ling
 summon minecraft:armor_stand 0 256 0 {NoAI:1b,NoGravity:1b,Marker:1b,Invisible:1b,Tags:[ling]}
