@@ -4,7 +4,6 @@ fill 3 150 3 -3 150 -3 minecraft:air
 worldborder set 2000 
 effect give @a minecraft:resistance 20 255 true
 effect give @a minecraft:invisibility 150 1 true
-team modify kill friendlyFire true
 scoreboard players set #1 alive 1
 scoreboard players set op SHC 3
 schedule function hogepack:6 450s append
