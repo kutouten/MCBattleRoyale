@@ -23,8 +23,8 @@ bossbar set 3 name [{"text":"安全エリア収縮開始まで 残り"},{"score"
 
 #最終安置移動用
 execute at @e[tag=ling] run worldborder center ~ ~
-execute as @e[tag=ling] at @s facing entity @e[tag=ling2] feet if entity @p[distance=1..] run teleport @s ^ ^ ^0.1 ~ ~
-execute at @e[tag=ling] if entity @e[tag=ling2,distance=0..2] run spreadplayers ~ ~ 1 50 true @e[tag=ling2]
+execute as @e[tag=ling] at @s facing entity @e[tag=ling2] feet if entity @a[distance=..33,gamemode=survival] run teleport @s ^ ^ ^0.1 ~ ~
+execute at @e[tag=ling] if entity @e[tag=ling2,distance=..2] run spreadplayers ~ ~ 1 50 true @e[tag=ling2]
 
 #待機時
 execute if score op SHC matches 1 run effect give @a minecraft:instant_health 1
