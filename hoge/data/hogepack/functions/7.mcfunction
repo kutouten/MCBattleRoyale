@@ -7,8 +7,9 @@ execute at @a run fill ~-3 0 ~-3 ~3 0 ~3 minecraft:bedrock
 execute if score op SHC matches 1 run bossbar set minecraft:1 visible true
 execute if score op SHC matches 1 run bossbar set minecraft:3 visible false
 execute if score op SHC matches 1 run bossbar set minecraft:4 visible false
-execute if score op SHC matches 3 run bossbar set minecraft:3 visible true
 execute if score op SHC matches 3 run bossbar set minecraft:1 visible false
+execute if score op SHC matches 3 run bossbar set minecraft:3 visible true
+execute if score op SHC matches 4 run bossbar set minecraft:3 visible false
 execute if score op SHC matches 4 run bossbar set minecraft:4 visible true
 execute if score op SHC matches 4 run scoreboard players remove 4 SHC 1
 execute if score op SHC matches 3 run scoreboard players remove 3 SHC 1
