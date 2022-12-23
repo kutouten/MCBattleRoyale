@@ -1,0 +1,11 @@
+{
+  "parent": "minecraft:item/handheld_rod",
+  "textures": {
+    "layer0": "minecraft:item/carrot_on_a_stick"
+  },
+
+  "overrides": [
+    {"predicate": {"custom_model_data":1}, "model": "minecraft:item/exit_rope"},
+    {"predicate": {"custom_model_data":2}, "model": "minecraft:item/hunting_eye"}
+  ]
+}
