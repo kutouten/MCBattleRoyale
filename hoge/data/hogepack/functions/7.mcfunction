@@ -35,15 +35,25 @@ execute if score op SHC matches 1 run effect give @a minecraft:saturation 1
 execute if score #countdown SHC matches 1.. run scoreboard players remove #countdown SHC 1
 
 #exit_rope
-execute as @a[nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{display:{Name:'{"text":"脱出用ロープ","italic":false}'}}}}] at @a[nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{display:{Name:'{"text":"脱出用ロープ","italic":false}'}}}}] if score @s ninzin matches 1 run spreadplayers ~ ~ 0 1 false @s
-execute as @a[scores={ninzin=1}] run clear @s minecraft:carrot_on_a_stick{display:{Name:'{"text":"脱出用ロープ","italic":false}'}} 1
-execute as @a[scores={ninzin=1}] run playsound minecraft:block.beacon.activate player @s ~ ~ ~ 1 1
-execute as @a[scores={ninzin=1}] run effect give @s minecraft:weakness 3 3
-execute as @a[scores={ninzin=1}] run effect give @s minecraft:blindness 3
-execute as @a[scores={ninzin=1}] run effect give @s minecraft:slowness 3 127
-execute as @a[scores={ninzin=1}] run effect give @s minecraft:jump_boost 3 250
+execute as @a[nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{display:{Name:'{"text":"脱出用ロープ","italic":false}'}}}}] at @a[nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{display:{Name:'{"text":"脱出用ロープ","italic":false}'}}}}] if score @s ninzin matches 1 run tag @s add exit_rope_user
+execute as @a[tag=exit_rope_user] run clear @s minecraft:carrot_on_a_stick{display:{Name:'{"text":"脱出用ロープ","italic":false}'}} 1
+execute as @a[tag=exit_rope_user] run playsound minecraft:block.beacon.activate player @s ~ ~ ~ 1 1
+execute as @a[tag=exit_rope_user] run effect give @s minecraft:weakness 3 3
+execute as @a[tag=exit_rope_user] run effect give @s minecraft:blindness 3
+execute as @a[tag=exit_rope_user] run effect give @s minecraft:slowness 3 127
+execute as @a[tag=exit_rope_user] run effect give @s minecraft:jump_boost 3 250
+execute as @a[tag=exit_rope_user] run tag @s remove exit_rope_user
+
+#hunting_eye
+execute as @a[nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{display:{Name:'[{"text":"Hunting eye","italic":false}]',Lore:['{"text":"半径20mの自分以外のプレイヤーに発光の効果を10秒付与する。"}','{"text":"発光は全員に表示される。"}']}}}}] at @a[nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{display:{Name:'[{"text":"Hunting eye","italic":false}]',Lore:['{"text":"半径20mの自分以外のプレイヤーに発光の効果を10秒付与する。"}','{"text":"発光は全員に表示される。"}']}}}}] if score @s ninzin matches 1 run tag @s add hunting_eye_user
+execute as @a[tag=hunting_eye_user] run clear @s minecraft:carrot_on_a_stick{display:{Name:'[{"text":"Hunting eye","italic":false}]',Lore:['{"text":"半径20mの自分以外のプレイヤーに発光の効果を10秒付与する。"}','{"text":"発光は全員に表示される。"}']}} 1
+execute at @a[tag=hunting_eye_user] run effect give @e[distance=..20,tag=!hunting_eye_user] minecraft:glowing 10 1 true
+execute as @a[tag=hunting_eye_user] run tag @s remove hunting_eye_user
+
+#これより下にninzinを使った検知を書かないこと
 execute as @a run scoreboard players set @a[scores={ninzin=1}] ninzin 0
 
+#クラフト関連
 #リンゴジュース
 execute as @e[type=item,nbt=!{Item:{tag:{Crafted:1b}}},nbt={Item:{id:"minecraft:apple",Count:2b}}] at @s if block ~ ~-1 ~ crafting_table if entity @e[type=item,distance=..0.5,nbt={Item:{id:"minecraft:glass_bottle",Count:1b}}] run tag @s add apple_bottle
 execute at @e[tag=apple_bottle] run summon minecraft:item ~ ~1 ~ {Item:{id:"minecraft:potion",Count:1b,tag:{display:{Name:'[{"text":"リンゴジュース","italic":false}]',Lore:['{"text":"のんだら元気いっぱい！"}']},CustomPotionEffects:[{Id:6,Amplifier:4b,Duration:0,Ambient:false,ShowParticles:true}],CustomPotionColor:16733695,Tags:[Crafted]}}}
@@ -130,3 +140,11 @@ execute at @e[tag=exit_rope] run particle minecraft:enchanted_hit ~ ~ ~ 0 0 0 1 
 execute at @e[tag=exit_rope] run playsound minecraft:block.anvil.use neutral @a ~ ~ ~ 1 1.6
 execute at @e[tag=exit_rope] run kill @e[sort=nearest,limit=1,type=item,nbt={Item:{id:"minecraft:feather",Count:1b}}]
 execute as @e[tag=exit_rope] run kill @s
+
+#hunting_eye
+execute as @e[type=item,nbt=!{Item:{tag:{Crafted:1b}}},nbt={Item:{id:"minecraft:spider_eye",Count:1b}}] at @s if block ~ ~-1 ~ crafting_table if entity @e[type=item,distance=..0.5,nbt={Item:{id:"minecraft:glass",Count:1b}}] run tag @s add hunting_eye
+execute at @e[tag=hunting_eye] run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:carrot_on_a_stick",Count:1b,tag:{display:{Name:'[{"text":"Hunting eye","italic":false}]',Lore:['{"text":"半径20mの自分以外のプレイヤーに発光の効果を10秒付与する。"}','{"text":"発光は全員に表示される。"}']}}}}
+execute at @e[tag=hunting_eye] run particle minecraft:enchanted_hit ~ ~ ~ 0 0 0 1 64 force
+execute at @e[tag=hunting_eye] run playsound minecraft:block.anvil.use neutral @a ~ ~ ~ 1 1.6
+execute at @e[tag=hunting_eye] run kill @e[sort=nearest,limit=1,type=item,nbt={Item:{id:"minecraft:glass",Count:1b}}]
+execute as @e[tag=hunting_eye] run kill @s
