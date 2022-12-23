@@ -38,9 +38,9 @@ execute if score #countdown SHC matches 1.. run scoreboard players remove #count
 execute as @a[nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{display:{Name:'{"text":"脱出用ロープ","italic":false}'}}}}] at @a[nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{display:{Name:'{"text":"脱出用ロープ","italic":false}'}}}}] if score @s ninzin matches 1 run spreadplayers ~ ~ 0 1 false @s
 execute as @a[scores={ninzin=1}] run clear @s minecraft:carrot_on_a_stick{display:{Name:'{"text":"脱出用ロープ","italic":false}'}} 1
 execute as @a[scores={ninzin=1}] run effect give @s minecraft:weakness 3 3
-execute as @a[scores={ninzin=1}] run effect give @a minecraft:blindness 3
-execute as @a[scores={ninzin=1}] run effect give @a minecraft:slowness 3 127
-execute as @a[scores={ninzin=1}] run effect give @a minecraft:jump_boost 3 250
+execute as @a[scores={ninzin=1}] run effect give @s minecraft:blindness 3
+execute as @a[scores={ninzin=1}] run effect give @s minecraft:slowness 3 127
+execute as @a[scores={ninzin=1}] run effect give @s minecraft:jump_boost 3 250
 execute as @a run scoreboard players set @a[scores={ninzin=1}] ninzin 0
 
 #リンゴジュース
