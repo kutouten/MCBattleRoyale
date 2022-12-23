@@ -2,10 +2,18 @@ title @a title "START"
 playsound minecraft:block.note_block.bit player @a ~ ~ ~ 1 2
 fill 3 150 3 -3 150 -3 minecraft:air
 worldborder set 2000 
+
+#開始時エフェクト付与
 effect give @a minecraft:resistance 20 255 true
 effect give @a minecraft:invisibility 150 1 true
+
+#各種スコアボード処理
 scoreboard players set #1 alive 1
 scoreboard players set op SHC 3
+scoreboard objectives add killcount playerKillCount
+scoreboard objectives setdisplay list killcount
+
+#スケジュール
 schedule function hogepack:6 450s append
 schedule function hogepack:timer 1s append
 
@@ -19,3 +27,4 @@ scoreboard players set #countdown SHC -1
 
 #テストで始まった瞬間分散するように
 spreadplayers ~ ~ 50 1000 false @a
+
