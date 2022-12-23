@@ -1,2 +1,2 @@
 function hogepack:start
-playsound minecraft:block.note_block.bit player @a ~ ~ ~ 2 2 1
+playsound minecraft:block.note_block.pling player @a ~ ~ ~ 2 2 1
