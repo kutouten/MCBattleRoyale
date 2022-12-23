@@ -28,3 +28,6 @@ scoreboard players set #countdown SHC -1
 #テストで始まった瞬間分散するように
 spreadplayers ~ ~ 50 1000 false @a
 
+#途中参加用にゲームモードのデフォをスペクテイターに
+defaultgamemode spectator
+

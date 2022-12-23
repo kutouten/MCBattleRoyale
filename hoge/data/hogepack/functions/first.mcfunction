@@ -19,9 +19,6 @@ scoreboard players set timer SHC 570
 #countdownが常時実行されないように
 scoreboard players set #countdown SHC -1
 
-#途中参加用にゲームモードのデフォをスペクテイターに
-defaultgamemode spectator
-
 #天候、時間固定(晴れ)
 gamerule doWeatherCycle false
 weather clear
