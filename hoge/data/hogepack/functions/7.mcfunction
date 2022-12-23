@@ -37,6 +37,7 @@ execute if score #countdown SHC matches 1.. run scoreboard players remove #count
 #exit_rope
 execute as @a[nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{display:{Name:'{"text":"脱出用ロープ","italic":false}'}}}}] at @a[nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{display:{Name:'{"text":"脱出用ロープ","italic":false}'}}}}] if score @s ninzin matches 1 run spreadplayers ~ ~ 0 1 false @s
 execute as @a[scores={ninzin=1}] run clear @s minecraft:carrot_on_a_stick{display:{Name:'{"text":"脱出用ロープ","italic":false}'}} 1
+execute as @a[scores={ninzin=1}] run playsound minecraft:block.beacon.activate player @s ~ ~ ~ 1 1
 execute as @a[scores={ninzin=1}] run effect give @s minecraft:weakness 3 3
 execute as @a[scores={ninzin=1}] run effect give @s minecraft:blindness 3
 execute as @a[scores={ninzin=1}] run effect give @s minecraft:slowness 3 127
