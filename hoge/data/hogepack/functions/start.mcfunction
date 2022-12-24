@@ -14,7 +14,7 @@ scoreboard objectives add killcount playerKillCount
 scoreboard objectives setdisplay list killcount
 
 #スケジュール
-schedule function hogepack:6 450s append
+schedule function hogepack:8 570s append
 schedule function hogepack:timer 1s append
 
 #支給品
