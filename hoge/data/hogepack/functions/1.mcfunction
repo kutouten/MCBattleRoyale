@@ -5,6 +5,8 @@ tp @a 0 153 0
 gamemode survival @a[tag=!admin]
 #サバイバルの人をteam「player」に追加。
 team join player @a[gamemode=survival]
+#ling
+summon minecraft:armor_stand 0 80 0 {NoAI:1b,NoGravity:1b,Marker:1b,Invisible:1b,Tags:[ling]}
 
 #bossbar
 bossbar add 3 "安全エリア収縮まで残り"
