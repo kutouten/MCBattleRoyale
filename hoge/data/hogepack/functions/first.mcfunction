@@ -1,4 +1,5 @@
 gamemode survival @a
+gamerule announceAdvancements false
 tp @a 0 153 0
 fill 3 150 3 -3 150 -3 minecraft:bedrock
 worldborder center 0.5 0.5

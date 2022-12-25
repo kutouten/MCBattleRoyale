@@ -25,7 +25,7 @@ bossbar set 3 name [{"text":"安全エリア収縮開始まで 残り"},{"score"
 #最終安置移動用
 execute at @e[tag=ling] run worldborder center ~ ~
 execute at @e[tag=ling] run setworldspawn ~ ~ ~
-execute as @e[tag=ling] at @s facing entity @e[tag=ling2] feet run teleport @s ^ ^ ^0.1 ~ ~
+execute as @e[tag=ling] at @s facing entity @e[tag=ling2] feet run teleport @s ^ ^ ^0.05 ~ ~
 execute at @e[tag=ling] if entity @e[tag=ling2,distance=0..2] run spreadplayers ~ ~ 1 50 true @e[tag=ling2]
 
 #待機時
