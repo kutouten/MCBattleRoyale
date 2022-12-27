@@ -106,3 +106,13 @@ execute at @a[scores={GUIbougu=1}] run item replace entity @e[type=minecraft:che
 execute at @a[scores={GUIbougu=1}] run item replace entity @e[type=minecraft:chest_minecart,limit=1,sort=nearest] container.25 with minecraft:blue_stained_glass_pane{display:{Name:'{"text":"bougu","italic":false}'}}
 execute at @a[scores={GUIbougu=1}] run item replace entity @e[type=minecraft:chest_minecart,limit=1,sort=nearest] container.26 with minecraft:barrier{display:{Name:'{"text":"メインに戻る","italic":false}'}}
 execute as @a[scores={GUIbougu=1}] run scoreboard players set @s GUIbougu 0
+
+#コンパス持ってるときだけチェストロッコ呼び出し
+scoreboard players set @r[scores={have_compass=0}] GUI_reset 0
+scoreboard players add @a[nbt={SelectedItem:{id:"minecraft:compass"}}] have_compass 1
+scoreboard players set @a[nbt=!{SelectedItem:{id:"minecraft:compass"}}] have_compass 0
+execute at @a[scores={have_compass=0}] run tp @e[tag=GUI,distance=..5] 0 256 0
+execute at @a[scores={have_compass=1}] run tp @e[tag=GUI,limit=1,sort=nearest,x=0,y=256,z=0] ~ ~1.2 ~
+execute at @e[tag=GUI] run scoreboard players add @a[distance=..2] GUI_reset 1
+execute as @a[scores={GUI_reset=1}] run scoreboard players set @s GUImain 1
+execute at @a[scores={have_compass=1..}] run tp @e[tag=GUI,limit=1,distance=0..5,sort=nearest] ~ ~1.2 ~
