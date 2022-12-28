@@ -8,14 +8,14 @@ execute as @a[scores={GUIbougu=0}] store success score @s GUIbougu run clear @s 
 execute as @a[scores={GUIpotion=0}] store success score @s GUIpotion run clear @s minecraft:potion{display:{Name:'{"text":"ポーション","italic":false}'}} 1
 execute as @a[scores={GUIpotion=0}] store success score @s GUIpotion run clear @s minecraft:blue_stained_glass_pane{display:{Name:'{"text":"potion","italic":false}'}} 1
 
-execute as @a[scores={craft_copper_helmet=0}] store success score @s craft_copper_helmet run clear @s minecraft:leather_helmet{display:{Name:'[{"text":"銅のヘルメットを作る","italic":false}]',Lore:['{"text":"[必要素材]"}','{"text":"銅のインゴットx5"}'],color:16744448},Enchantments:[{id:"protection",lvl:1}],HideFlags:64} 1
-execute as @a[scores={craft_copper_chestplate=0}] store success score @s craft_copper_chestplate run clear @s minecraft:leather_chestplate{display:{Name:'[{"text":"銅のチェストプレートを作る","italic":false}]',Lore:['{"text":"[必要素材]"}','{"text":"銅のインゴットx8"}'],color:16744448},Enchantments:[{id:"protection",lvl:1}],HideFlags:64} 1
-execute as @a[scores={craft_copper_leggings=0}] store success score @s craft_copper_leggings run clear @s minecraft:leather_leggings{display:{Name:'[{"text":"銅のレギンスを作る","italic":false}]',Lore:['{"text":"[必要素材]"}','{"text":"銅のインゴットx7"}'],color:16744448},Enchantments:[{id:"protection",lvl:1}],HideFlags:64} 1
-execute as @a[scores={craft_copper_boots=0}] store success score @s craft_copper_boots run clear @s minecraft:leather_boots{display:{Name:'[{"text":"銅のブーツを作る","italic":false}]',Lore:['{"text":"[必要素材]"}','{"text":"銅のインゴットx4"}'],color:16744448},Enchantments:[{id:"protection",lvl:1}],HideFlags:64} 1
-execute as @a[scores={craft_apple_potion=0}] store success score @s craft_apple_potion run clear @s minecraft:potion{display:{Name:'[{"text":"リンゴジュース","italic":false}]',Lore:['{"text":"[必要素材]"}','{"text":"リンゴx2"}','{"text":"ガラス瓶x1"}']},CustomPotionEffects:[{Id:6b,Amplifier:4b,Duration:0,Ambient:false,ShowParticles:true}],CustomPotionColor:16733695} 1
-execute as @a[scores={craft_shield_potion=0}] store success score @s craft_shield_potion run clear @s minecraft:potion{display:{Name:'[{"text":"シールドバッテリーを作る","italic":false}]',Lore:['{"text":"[必要素材]"}','{"text":"ラピスラズリブロックx1"}','{"text":"ガラス瓶x1"}']},CustomPotionEffects:[{Id:22b,Amplifier:2b,Duration:36000,Ambient:false,ShowParticles:false}],CustomPotionColor:170} 1
-execute as @a[scores={craft_protein=0}] store success score @s craft_protein run clear @s minecraft:potion{display:{Name:'[{"text":"プロテインを作る","italic":false}]',Lore:['{"text":"[必要素材]"}','{"text":"生の豚肉x1"}','{"text":"生の牛肉x1"}','{"text":"生の鶏肉x1"}','{"text":"生の羊肉x1"}','{"text":"ガラス瓶x1"}']},CustomPotionEffects:[{Id:1b,Amplifier:0b,Duration:400,Ambient:false,ShowParticles:false},{Id:11b,Amplifier:0b,Duration:400,Ambient:false,ShowParticles:false}],CustomPotionColor:4194304} 1
-execute as @a[scores={craft_octane_potion=0}] store success score @s craft_octane_potion run clear @s minecraft:splash_potion{display:{Name:'[{"text":"興奮剤を作る","italic":false}]',Lore:['{"text":"[必要素材]"}','{"text":"砂糖x2"}','{"text":"火薬x1"}','{"text":"種x1"}','{"text":"ガラス瓶x1"}']},CustomPotionEffects:[{Id:1b,Amplifier:2b,Duration:160,Ambient:false,ShowParticles:false},{Id:8b,Amplifier:2b,Duration:160,Ambient:false,ShowParticles:false}],CustomPotionColor:5635925} 1
+execute as @a[scores={craft_copper_helmet=0}] store success score @s craft_copper_helmet run clear @s minecraft:leather_helmet{display:{Name:'[{"text":"銅のヘルメットを作る","italic":false}]',Lore:['{"text":"[必要素材]","italic":false}','{"text":"銅のインゴットx5","italic":false}'],color:16744448},Enchantments:[{id:"protection",lvl:1}],HideFlags:64} 1
+execute as @a[scores={craft_copper_chestplate=0}] store success score @s craft_copper_chestplate run clear @s minecraft:leather_chestplate{display:{Name:'[{"text":"銅のチェストプレートを作る","italic":false}]',Lore:['{"text":"[必要素材]","italic":false}','{"text":"銅のインゴットx8","italic":false}'],color:16744448},Enchantments:[{id:"protection",lvl:1}],HideFlags:64} 1
+execute as @a[scores={craft_copper_leggings=0}] store success score @s craft_copper_leggings run clear @s minecraft:leather_leggings{display:{Name:'[{"text":"銅のレギンスを作る","italic":false}]',Lore:['{"text":"[必要素材]","italic":false}','{"text":"銅のインゴットx7","italic":false}'],color:16744448},Enchantments:[{id:"protection",lvl:1}],HideFlags:64} 1
+execute as @a[scores={craft_copper_boots=0}] store success score @s craft_copper_boots run clear @s minecraft:leather_boots{display:{Name:'[{"text":"銅のブーツを作る","italic":false}]',Lore:['{"text":"[必要素材]","italic":false}','{"text":"銅のインゴットx4","italic":false}'],color:16744448},Enchantments:[{id:"protection",lvl:1}],HideFlags:64} 1
+execute as @a[scores={craft_apple_potion=0}] store success score @s craft_apple_potion run clear @s minecraft:potion{display:{Name:'[{"text":"リンゴジュース","italic":false}]',Lore:['{"text":"[必要素材]","italic":false}','{"text":"リンゴx2","italic":false}','{"text":"ガラス瓶x1","italic":false}']},CustomPotionEffects:[{Id:6b,Amplifier:4b,Duration:0,Ambient:false,ShowParticles:true}],CustomPotionColor:16733695} 1
+execute as @a[scores={craft_shield_potion=0}] store success score @s craft_shield_potion run clear @s minecraft:potion{display:{Name:'[{"text":"シールドバッテリーを作る","italic":false}]',Lore:['{"text":"[必要素材]","italic":false}','{"text":"ラピスラズリブロックx1","italic":false}','{"text":"ガラス瓶x1","italic":false}']},CustomPotionEffects:[{Id:22b,Amplifier:2b,Duration:36000,Ambient:false,ShowParticles:false}],CustomPotionColor:170} 1
+execute as @a[scores={craft_protein=0}] store success score @s craft_protein run clear @s minecraft:potion{display:{Name:'[{"text":"プロテインを作る","italic":false}]',Lore:['{"text":"[必要素材]","italic":false}','{"text":"生の豚肉x1","italic":false}','{"text":"生の牛肉x1","italic":false}','{"text":"生の鶏肉x1","italic":false}','{"text":"生の羊肉x1","italic":false}','{"text":"ガラス瓶x1","italic":false}']},CustomPotionEffects:[{Id:1b,Amplifier:0b,Duration:400,Ambient:false,ShowParticles:false},{Id:11b,Amplifier:0b,Duration:400,Ambient:false,ShowParticles:false}],CustomPotionColor:4194304} 1
+execute as @a[scores={craft_octane_potion=0}] store success score @s craft_octane_potion run clear @s minecraft:splash_potion{display:{Name:'[{"text":"興奮剤を作る","italic":false}]',Lore:['{"text":"[必要素材]","italic":false}','{"text":"砂糖x3","italic":false}','{"text":"火薬x1","italic":false}','{"text":"種x1","italic":false}','{"text":"ガラス瓶x1","italic":false}']},CustomPotionEffects:[{Id:1b,Amplifier:2b,Duration:160,Ambient:false,ShowParticles:false},{Id:8b,Amplifier:2b,Duration:160,Ambient:false,ShowParticles:false}],CustomPotionColor:5635925} 1
 
 #クラフト処理(アイテム数の検知→その結果に応じて反応→guibouguを再表示、クリックで増えたスコアボードを削除)
 #銅のヘルメット
@@ -74,6 +74,73 @@ execute at @a[tag=miss_crafted_apple_potion] run playsound minecraft:entity.vill
 execute as @a[tag=miss_crafted_apple_potion] run tag @s remove miss_crafted_apple_potion
 execute as @a[scores={craft_apple_potion=1}] run scoreboard players set @s GUIpotion 1
 execute as @a[scores={craft_apple_potion=1}] run scoreboard players set @s craft_apple_potion 0
+
+#シールドバッテリー
+execute as @a[scores={craft_shield_potion=1}] store result score @a have_lapis_block run clear @s minecraft:lapis_block 0
+execute as @a[scores={craft_shield_potion=1}] store result score @a have_glass_bottle run clear @s minecraft:glass_bottle 0
+execute as @a[scores={craft_shield_potion=1,have_lapis_block=1..,have_glass_bottle=1..}] run tag @s add crafted_shield_potion
+execute as @a[scores={craft_shield_potion=1,have_glass_bottle=..0}] run tag @s add miss_crafted_shield_potion
+execute as @a[scores={craft_shield_potion=1,have_lapis_block=..0}] run tag @s add miss_crafted_shield_potion
+execute as @a[tag=crafted_shield_potion] run clear @s minecraft:lapis_block 1
+execute as @a[tag=crafted_shield_potion] run clear @s minecraft:glass_bottle 1
+execute as @a[tag=crafted_shield_potion] run give @s minecraft:potion{display:{Name:'[{"text":"シールドバッテリー","italic":false}]',},CustomPotionEffects:[{Id:22b,Amplifier:2b,Duration:36000,Ambient:false,ShowParticles:false}],CustomPotionColor:170}
+execute at @a[tag=crafted_shield_potion] run playsound minecraft:block.anvil.use neutral @a ~ ~ ~ 1 2
+execute as @a[tag=crafted_shield_potion] run tag @s remove crafted_shield_potion
+execute as @a[tag=miss_crafted_shield_potion] run tellraw @s "素材が不足しています"
+execute at @a[tag=miss_crafted_shield_potion] run playsound minecraft:entity.villager.no neutral @a ~ ~ ~ 1 1
+execute as @a[tag=miss_crafted_shield_potion] run tag @s remove miss_crafted_shield_potion
+execute as @a[scores={craft_shield_potion=1}] run scoreboard players set @s GUIpotion 1
+execute as @a[scores={craft_shield_potion=1}] run scoreboard players set @s craft_shield_potion 0
+
+#プロテイン
+execute as @a[scores={craft_protein=1}] store result score @a have_glass_bottle run clear @s minecraft:glass_bottle 0
+execute as @a[scores={craft_protein=1}] store result score @a have_beef run clear @s minecraft:beef 0
+execute as @a[scores={craft_protein=1}] store result score @a have_chicken run clear @s minecraft:chicken 0
+execute as @a[scores={craft_protein=1}] store result score @a have_mutton run clear @s minecraft:mutton 0
+execute as @a[scores={craft_protein=1}] store result score @a have_porkchop run clear @s minecraft:porkchop 0
+execute as @a[scores={craft_protein=1,have_beef=1..,have_porkchop=1..,have_chicken=1..,have_mutton=1..,have_glass_bottle=1..}] run tag @s add crafted_protein
+execute as @a[scores={craft_protein=1,have_beef=..0}] run tag @s add miss_crafted_protein
+execute as @a[scores={craft_protein=1,have_chicken=..0}] run tag @s add miss_crafted_protein
+execute as @a[scores={craft_protein=1,have_mutton=..0}] run tag @s add miss_crafted_protein
+execute as @a[scores={craft_protein=1,have_porkchop=..0}] run tag @s add miss_crafted_protein
+execute as @a[scores={craft_protein=1,have_glass_bottle=..0}] run tag @s add miss_crafted_protein
+execute as @a[tag=crafted_protein] run clear @s minecraft:beef 1
+execute as @a[tag=crafted_protein] run clear @s minecraft:porkchop 1
+execute as @a[tag=crafted_protein] run clear @s minecraft:mutton 1
+execute as @a[tag=crafted_protein] run clear @s minecraft:chicken 1
+execute as @a[tag=crafted_protein] run clear @s minecraft:glass_bottle 1
+execute as @a[tag=crafted_protein] run give @s minecraft:potion{display:{Name:'[{"text":"プロテイン","italic":false}]'},CustomPotionEffects:[{Id:1b,Amplifier:0b,Duration:400,Ambient:false,ShowParticles:false},{Id:11b,Amplifier:0b,Duration:400,Ambient:false,ShowParticles:false}],CustomPotionColor:4194304}
+execute at @a[tag=crafted_protein] run playsound minecraft:block.anvil.use neutral @a ~ ~ ~ 1 2
+execute as @a[tag=crafted_protein] run tag @s remove crafted_protein
+execute as @a[tag=miss_crafted_protein] run tellraw @s "素材が不足しています"
+execute at @a[tag=miss_crafted_protein] run playsound minecraft:entity.villager.no neutral @a ~ ~ ~ 1 1
+execute as @a[tag=miss_crafted_protein] run tag @s remove miss_crafted_protein
+execute as @a[scores={craft_protein=1}] run scoreboard players set @s GUIpotion 1
+execute as @a[scores={craft_protein=1}] run scoreboard players set @s craft_protein 0
+
+#興奮剤
+execute as @a[scores={craft_octane_potion=1}] store result score @a have_glass_bottle run clear @s minecraft:glass_bottle 0
+execute as @a[scores={craft_octane_potion=1}] store result score @a have_gunpowder run clear @s minecraft:gunpowder 0
+execute as @a[scores={craft_octane_potion=1}] store result score @a have_suger run clear @s minecraft:sugar 0
+execute as @a[scores={craft_octane_potion=1}] store result score @a have_wheat_seeds run clear @s minecraft:wheat_seeds 0
+execute as @a[scores={craft_octane_potion=1,have_gunpowder=1..,have_glass_bottle=1..,have_suger=3..,have_wheat_seeds=1..}] run tag @s add crafted_octane_potion
+execute as @a[scores={craft_octane_potion=1,have_gunpowder=..0}] run tag @s add miss_crafted_octane_potion
+execute as @a[scores={craft_octane_potion=1,have_suger=..2}] run tag @s add miss_crafted_octane_potion
+execute as @a[scores={craft_octane_potion=1,have_wheat_seeds=..0}] run tag @s add miss_crafted_octane_potion
+execute as @a[scores={craft_octane_potion=1,have_glass_bottle=..0}] run tag @s add miss_crafted_octane_potion
+execute as @a[tag=crafted_octane_potion] run clear @s minecraft:glass_bottle 1
+execute as @a[tag=crafted_octane_potion] run clear @s minecraft:sugar 3
+execute as @a[tag=crafted_octane_potion] run clear @s minecraft:wheat_seeds 1
+execute as @a[tag=crafted_octane_potion] run clear @s minecraft:gunpowder 1
+execute as @a[tag=crafted_octane_potion] run give @s minecraft:splash_potion{display:{Name:'[{"text":"興奮剤","italic":false}]'},CustomPotionEffects:[{Id:1b,Amplifier:2b,Duration:160,Ambient:false,ShowParticles:false},{Id:8b,Amplifier:2b,Duration:160,Ambient:false,ShowParticles:false}],CustomPotionColor:5635925} 3
+execute at @a[tag=crafted_octane_potion] run playsound minecraft:block.anvil.use neutral @a ~ ~ ~ 1 2
+execute as @a[tag=crafted_octane_potion] run tag @s remove crafted_octane_potion
+execute as @a[tag=miss_crafted_octane_potion] run tellraw @s "素材が不足しています"
+execute at @a[tag=miss_crafted_octane_potion] run playsound minecraft:entity.villager.no neutral @a ~ ~ ~ 1 1
+execute as @a[tag=miss_crafted_octane_potion] run tag @s remove miss_crafted_octane_potion
+execute as @a[scores={craft_octane_potion=1}] run scoreboard players set @s GUIpotion 1
+execute as @a[scores={craft_octane_potion=1}] run scoreboard players set @s craft_octane_potion 0
+
 
 #mainが1の時に開く
 execute at @a[scores={GUImain=1}] run item replace entity @e[type=minecraft:chest_minecart,limit=1,sort=nearest] container.10 with minecraft:iron_sword{display:{Name:'{"text":"武器","italic":false}'}}
@@ -146,10 +213,10 @@ execute at @a[scores={GUIbougu=1}] run item replace entity @e[type=minecraft:che
 execute at @a[scores={GUIbougu=1}] run item replace entity @e[type=minecraft:chest_minecart,limit=1,sort=nearest] container.7 with minecraft:blue_stained_glass_pane{display:{Name:'{"text":"bougu","italic":false}'}}
 execute at @a[scores={GUIbougu=1}] run item replace entity @e[type=minecraft:chest_minecart,limit=1,sort=nearest] container.8 with minecraft:blue_stained_glass_pane{display:{Name:'{"text":"bougu","italic":false}'}}
 execute at @a[scores={GUIbougu=1}] run item replace entity @e[type=minecraft:chest_minecart,limit=1,sort=nearest] container.9 with minecraft:blue_stained_glass_pane{display:{Name:'{"text":"bougu","italic":false}'}}
-execute at @a[scores={GUIbougu=1}] run item replace entity @e[type=minecraft:chest_minecart,limit=1,sort=nearest] container.10 with minecraft:leather_helmet{display:{Name:'[{"text":"銅のヘルメットを作る","italic":false}]',Lore:['{"text":"[必要素材]"}','{"text":"銅のインゴットx5"}'],color:16744448},Enchantments:[{id:"protection",lvl:1}],HideFlags:64}
-execute at @a[scores={GUIbougu=1}] run item replace entity @e[type=minecraft:chest_minecart,limit=1,sort=nearest] container.11 with minecraft:leather_chestplate{display:{Name:'[{"text":"銅のチェストプレートを作る","italic":false}]',Lore:['{"text":"[必要素材]"}','{"text":"銅のインゴットx8"}'],color:16744448},Enchantments:[{id:"protection",lvl:1}],HideFlags:64}
-execute at @a[scores={GUIbougu=1}] run item replace entity @e[type=minecraft:chest_minecart,limit=1,sort=nearest] container.12 with minecraft:leather_leggings{display:{Name:'[{"text":"銅のレギンスを作る","italic":false}]',Lore:['{"text":"[必要素材]"}','{"text":"銅のインゴットx7"}'],color:16744448},Enchantments:[{id:"protection",lvl:1}],HideFlags:64}
-execute at @a[scores={GUIbougu=1}] run item replace entity @e[type=minecraft:chest_minecart,limit=1,sort=nearest] container.13 with minecraft:leather_boots{display:{Name:'[{"text":"銅のブーツを作る","italic":false}]',Lore:['{"text":"[必要素材]"}','{"text":"銅のインゴットx4"}'],color:16744448},Enchantments:[{id:"protection",lvl:1}],HideFlags:64}
+execute at @a[scores={GUIbougu=1}] run item replace entity @e[type=minecraft:chest_minecart,limit=1,sort=nearest] container.10 with minecraft:leather_helmet{display:{Name:'[{"text":"銅のヘルメットを作る","italic":false}]',Lore:['{"text":"[必要素材]","italic":false}','{"text":"銅のインゴットx5","italic":false}'],color:16744448},Enchantments:[{id:"protection",lvl:1}],HideFlags:64}
+execute at @a[scores={GUIbougu=1}] run item replace entity @e[type=minecraft:chest_minecart,limit=1,sort=nearest] container.11 with minecraft:leather_chestplate{display:{Name:'[{"text":"銅のチェストプレートを作る","italic":false}]',Lore:['{"text":"[必要素材]","italic":false}','{"text":"銅のインゴットx8","italic":false}'],color:16744448},Enchantments:[{id:"protection",lvl:1}],HideFlags:64}
+execute at @a[scores={GUIbougu=1}] run item replace entity @e[type=minecraft:chest_minecart,limit=1,sort=nearest] container.12 with minecraft:leather_leggings{display:{Name:'[{"text":"銅のレギンスを作る","italic":false}]',Lore:['{"text":"[必要素材]","italic":false}','{"text":"銅のインゴットx7","italic":false}'],color:16744448},Enchantments:[{id:"protection",lvl:1}],HideFlags:64}
+execute at @a[scores={GUIbougu=1}] run item replace entity @e[type=minecraft:chest_minecart,limit=1,sort=nearest] container.13 with minecraft:leather_boots{display:{Name:'[{"text":"銅のブーツを作る","italic":false}]',Lore:['{"text":"[必要素材]","italic":false}','{"text":"銅のインゴットx4","italic":false}'],color:16744448},Enchantments:[{id:"protection",lvl:1}],HideFlags:64}
 execute at @a[scores={GUIbougu=1}] run item replace entity @e[type=minecraft:chest_minecart,limit=1,sort=nearest] container.14 with minecraft:blue_stained_glass_pane{display:{Name:'{"text":"bougu","italic":false}'}}
 execute at @a[scores={GUIbougu=1}] run item replace entity @e[type=minecraft:chest_minecart,limit=1,sort=nearest] container.15 with minecraft:blue_stained_glass_pane{display:{Name:'{"text":"bougu","italic":false}'}}
 execute at @a[scores={GUIbougu=1}] run item replace entity @e[type=minecraft:chest_minecart,limit=1,sort=nearest] container.16 with minecraft:blue_stained_glass_pane{display:{Name:'{"text":"bougu","italic":false}'}}
@@ -176,10 +243,10 @@ execute at @a[scores={GUIpotion=1}] run item replace entity @e[type=minecraft:ch
 execute at @a[scores={GUIpotion=1}] run item replace entity @e[type=minecraft:chest_minecart,limit=1,sort=nearest] container.7 with minecraft:blue_stained_glass_pane{display:{Name:'{"text":"potion","italic":false}'}}
 execute at @a[scores={GUIpotion=1}] run item replace entity @e[type=minecraft:chest_minecart,limit=1,sort=nearest] container.8 with minecraft:blue_stained_glass_pane{display:{Name:'{"text":"potion","italic":false}'}}
 execute at @a[scores={GUIpotion=1}] run item replace entity @e[type=minecraft:chest_minecart,limit=1,sort=nearest] container.9 with minecraft:blue_stained_glass_pane{display:{Name:'{"text":"potion","italic":false}'}}
-execute at @a[scores={GUIpotion=1}] run item replace entity @e[type=minecraft:chest_minecart,limit=1,sort=nearest] container.10 with minecraft:potion{display:{Name:'[{"text":"リンゴジュース","italic":false}]',Lore:['{"text":"[必要素材]"}','{"text":"リンゴx2"}','{"text":"ガラス瓶x1"}']},CustomPotionEffects:[{Id:6b,Amplifier:4b,Duration:0,Ambient:false,ShowParticles:true}],CustomPotionColor:16733695}
-execute at @a[scores={GUIpotion=1}] run item replace entity @e[type=minecraft:chest_minecart,limit=1,sort=nearest] container.11 with minecraft:potion{display:{Name:'[{"text":"シールドバッテリーを作る","italic":false}]',Lore:['{"text":"[必要素材]"}','{"text":"ラピスラズリブロックx1"}','{"text":"ガラス瓶x1"}']},CustomPotionEffects:[{Id:22b,Amplifier:2b,Duration:36000,Ambient:false,ShowParticles:false}],CustomPotionColor:170}
-execute at @a[scores={GUIpotion=1}] run item replace entity @e[type=minecraft:chest_minecart,limit=1,sort=nearest] container.12 with minecraft:potion{display:{Name:'[{"text":"プロテインを作る","italic":false}]',Lore:['{"text":"[必要素材]"}','{"text":"生の豚肉x1"}','{"text":"生の牛肉x1"}','{"text":"生の鶏肉x1"}','{"text":"生の羊肉x1"}','{"text":"ガラス瓶x1"}']},CustomPotionEffects:[{Id:1b,Amplifier:0b,Duration:400,Ambient:false,ShowParticles:false},{Id:11b,Amplifier:0b,Duration:400,Ambient:false,ShowParticles:false}],CustomPotionColor:4194304}
-execute at @a[scores={GUIpotion=1}] run item replace entity @e[type=minecraft:chest_minecart,limit=1,sort=nearest] container.13 with minecraft:splash_potion{display:{Name:'[{"text":"興奮剤を作る","italic":false}]',Lore:['{"text":"[必要素材]"}','{"text":"砂糖x2"}','{"text":"火薬x1"}','{"text":"種x1"}','{"text":"ガラス瓶x1"}']},CustomPotionEffects:[{Id:1b,Amplifier:2b,Duration:160,Ambient:false,ShowParticles:false},{Id:8b,Amplifier:2b,Duration:160,Ambient:false,ShowParticles:false}],CustomPotionColor:5635925}
+execute at @a[scores={GUIpotion=1}] run item replace entity @e[type=minecraft:chest_minecart,limit=1,sort=nearest] container.10 with minecraft:potion{display:{Name:'[{"text":"リンゴジュース","italic":false}]',Lore:['{"text":"[必要素材]","italic":false}','{"text":"リンゴx2","italic":false}','{"text":"ガラス瓶x1","italic":false}']},CustomPotionEffects:[{Id:6b,Amplifier:4b,Duration:0,Ambient:false,ShowParticles:true}],CustomPotionColor:16733695}
+execute at @a[scores={GUIpotion=1}] run item replace entity @e[type=minecraft:chest_minecart,limit=1,sort=nearest] container.11 with minecraft:potion{display:{Name:'[{"text":"シールドバッテリーを作る","italic":false}]',Lore:['{"text":"[必要素材]","italic":false}','{"text":"ラピスラズリブロックx1","italic":false}','{"text":"ガラス瓶x1","italic":false}']},CustomPotionEffects:[{Id:22b,Amplifier:2b,Duration:36000,Ambient:false,ShowParticles:false}],CustomPotionColor:170}
+execute at @a[scores={GUIpotion=1}] run item replace entity @e[type=minecraft:chest_minecart,limit=1,sort=nearest] container.12 with minecraft:potion{display:{Name:'[{"text":"プロテインを作る","italic":false}]',Lore:['{"text":"[必要素材]","italic":false}','{"text":"生の豚肉x1","italic":false}','{"text":"生の牛肉x1","italic":false}','{"text":"生の鶏肉x1","italic":false}','{"text":"生の羊肉x1","italic":false}','{"text":"ガラス瓶x1","italic":false}']},CustomPotionEffects:[{Id:1b,Amplifier:0b,Duration:400,Ambient:false,ShowParticles:false},{Id:11b,Amplifier:0b,Duration:400,Ambient:false,ShowParticles:false}],CustomPotionColor:4194304}
+execute at @a[scores={GUIpotion=1}] run item replace entity @e[type=minecraft:chest_minecart,limit=1,sort=nearest] container.13 with minecraft:splash_potion{display:{Name:'[{"text":"興奮剤を作る","italic":false}]',Lore:['{"text":"[必要素材]","italic":false}','{"text":"砂糖x3","italic":false}','{"text":"火薬x1","italic":false}','{"text":"種x1","italic":false}','{"text":"ガラス瓶x1","italic":false}']},CustomPotionEffects:[{Id:1b,Amplifier:2b,Duration:160,Ambient:false,ShowParticles:false},{Id:8b,Amplifier:2b,Duration:160,Ambient:false,ShowParticles:false}],CustomPotionColor:5635925}
 execute at @a[scores={GUIpotion=1}] run item replace entity @e[type=minecraft:chest_minecart,limit=1,sort=nearest] container.14 with minecraft:blue_stained_glass_pane{display:{Name:'{"text":"potion","italic":false}'}}
 execute at @a[scores={GUIpotion=1}] run item replace entity @e[type=minecraft:chest_minecart,limit=1,sort=nearest] container.15 with minecraft:blue_stained_glass_pane{display:{Name:'{"text":"potion","italic":false}'}}
 execute at @a[scores={GUIpotion=1}] run item replace entity @e[type=minecraft:chest_minecart,limit=1,sort=nearest] container.16 with minecraft:blue_stained_glass_pane{display:{Name:'{"text":"potion","italic":false}'}}
