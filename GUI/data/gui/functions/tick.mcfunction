@@ -1,12 +1,14 @@
 #アイテムのクリック検知（ほぼテンプレ）
 execute as @a[scores={GUImain=0}] store success score @s GUImain run clear @s minecraft:barrier{display:{Name:'{"text":"メインに戻る","italic":false}'}} 1
 execute as @a[scores={GUImain=0}] store success score @s GUImain run clear @s minecraft:blue_stained_glass_pane{display:{Name:'{"text":"main"}'}} 1
-execute as @a[scores={GUIbuki=0}] store success score @s GUIbuki run clear @s minecraft:iron_sword{display:{Name:'{"text":"武器","italic":false}'}} 1
+#武器GUIの移動無しにしてます
+execute as @a[scores={GUImain=0}] store success score @s GUImain run clear @s minecraft:iron_sword{display:{Name:'{"text":"武器","italic":false}'}} 1
 execute as @a[scores={GUIbuki=0}] store success score @s GUIbuki run clear @s minecraft:blue_stained_glass_pane{display:{Name:'{"text":"buki","italic":false}'}} 1
 execute as @a[scores={GUIbougu=0}] store success score @s GUIbougu run clear @s minecraft:diamond_chestplate{display:{Name:'{"text":"装備","italic":false}'}} 1
 execute as @a[scores={GUIbougu=0}] store success score @s GUIbougu run clear @s minecraft:blue_stained_glass_pane{display:{Name:'{"text":"bougu","italic":false}'}} 1
 execute as @a[scores={GUIpotion=0}] store success score @s GUIpotion run clear @s minecraft:potion{display:{Name:'{"text":"ポーション","italic":false}'}} 1
 execute as @a[scores={GUIpotion=0}] store success score @s GUIpotion run clear @s minecraft:blue_stained_glass_pane{display:{Name:'{"text":"potion","italic":false}'}} 1
+execute as @a[scores={GUIother=0}] store success score @s GUIother run clear @s minecraft:stick{display:{Name:'{"text":"その他","italic":false}'}}
 
 execute as @a[scores={craft_copper_helmet=0}] store success score @s craft_copper_helmet run clear @s minecraft:leather_helmet{display:{Name:'[{"text":"銅のヘルメットを作る","italic":false}]',Lore:['{"text":"[必要素材]","italic":false}','{"text":"銅のインゴットx5","italic":false}'],color:16744448},Enchantments:[{id:"protection",lvl:1}],HideFlags:64} 1
 execute as @a[scores={craft_copper_chestplate=0}] store success score @s craft_copper_chestplate run clear @s minecraft:leather_chestplate{display:{Name:'[{"text":"銅のチェストプレートを作る","italic":false}]',Lore:['{"text":"[必要素材]","italic":false}','{"text":"銅のインゴットx8","italic":false}'],color:16744448},Enchantments:[{id:"protection",lvl:1}],HideFlags:64} 1
@@ -16,6 +18,8 @@ execute as @a[scores={craft_apple_potion=0}] store success score @s craft_apple_
 execute as @a[scores={craft_shield_potion=0}] store success score @s craft_shield_potion run clear @s minecraft:potion{display:{Name:'[{"text":"シールドバッテリーを作る","italic":false}]',Lore:['{"text":"[必要素材]","italic":false}','{"text":"ラピスラズリブロックx1","italic":false}','{"text":"ガラス瓶x1","italic":false}']},CustomPotionEffects:[{Id:22b,Amplifier:2b,Duration:36000,Ambient:false,ShowParticles:false}],CustomPotionColor:170} 1
 execute as @a[scores={craft_protein=0}] store success score @s craft_protein run clear @s minecraft:potion{display:{Name:'[{"text":"プロテインを作る","italic":false}]',Lore:['{"text":"[必要素材]","italic":false}','{"text":"生の豚肉x1","italic":false}','{"text":"生の牛肉x1","italic":false}','{"text":"生の鶏肉x1","italic":false}','{"text":"生の羊肉x1","italic":false}','{"text":"ガラス瓶x1","italic":false}']},CustomPotionEffects:[{Id:1b,Amplifier:0b,Duration:400,Ambient:false,ShowParticles:false},{Id:11b,Amplifier:0b,Duration:400,Ambient:false,ShowParticles:false}],CustomPotionColor:4194304} 1
 execute as @a[scores={craft_octane_potion=0}] store success score @s craft_octane_potion run clear @s minecraft:splash_potion{display:{Name:'[{"text":"興奮剤を作る","italic":false}]',Lore:['{"text":"[必要素材]","italic":false}','{"text":"砂糖x3","italic":false}','{"text":"火薬x1","italic":false}','{"text":"種x1","italic":false}','{"text":"ガラス瓶x1","italic":false}']},CustomPotionEffects:[{Id:1b,Amplifier:2b,Duration:160,Ambient:false,ShowParticles:false},{Id:8b,Amplifier:2b,Duration:160,Ambient:false,ShowParticles:false}],CustomPotionColor:5635925} 1
+execute as @a[scores={craft_exitrope=0}] store success score @s craft_exitrope run clear @s minecraft:carrot_on_a_stick{display:{Name:'[{"text":"脱出用ロープを作る","italic":false}]',Lore:['{"text":"使用者のいる座標の","italic":false}','{"text":"一番上にあるブロックにテレポートする。","italic":false}','{"text":"使用後は疲労で動けなくなる。","italic":false}','{"text":""}','{"text":"[必要素材]","italic":false}','{"text":"蜘蛛の糸x2","italic":false}','{"text":"羽x1","italic":false}']},CustomModelData:1} 1
+execute as @a[scores={craft_hunting_eye=0}] store success score @s craft_hunting_eye run clear @s minecraft:carrot_on_a_stick{display:{Name:'[{"text":"Hunting eyeを作る","italic":false}]',Lore:['{"text":"使用者のから20m以内の","italic":false}','{"text":"相手プレイヤーに発光効果を","italic":false}','{"text":"10秒付与する","italic":false}','{"text":""}','{"text":"[必要素材]","italic":false}','{"text":"蜘蛛の目x1","italic":false}','{"text":"ガラスx1","italic":false}']},CustomModelData:2} 1
 
 #クラフト処理(アイテム数の検知→その結果に応じて反応→guibouguを再表示、クリックで増えたスコアボードを削除)
 #銅のヘルメット
@@ -141,6 +145,39 @@ execute as @a[tag=miss_crafted_octane_potion] run tag @s remove miss_crafted_oct
 execute as @a[scores={craft_octane_potion=1}] run scoreboard players set @s GUIpotion 1
 execute as @a[scores={craft_octane_potion=1}] run scoreboard players set @s craft_octane_potion 0
 
+#脱出用ロープ
+execute as @a[scores={craft_exitrope=1}] store result score @a have_strings run clear @s minecraft:string 0
+execute as @a[scores={craft_exitrope=1}] store result score @a have_feather run clear @s minecraft:feather 0
+execute as @a[scores={craft_exitrope=1,have_feather=1..,have_strings=2..}] run tag @s add crafted_exitrope
+execute as @a[scores={craft_exitrope=1,have_feather=..0}] run tag @s add miss_crafted_exitrope
+execute as @a[scores={craft_exitrope=1,have_strings=..1}] run tag @s add miss_crafted_exitrope
+execute as @a[tag=crafted_exitrope] run clear @s minecraft:feather 1
+execute as @a[tag=crafted_exitrope] run clear @s minecraft:string 2
+execute as @a[tag=crafted_exitrope] run give @s minecraft:carrot_on_a_stick{display:{Name:'[{"text":"脱出用ロープ","italic":false}]',Lore:['{"text":"使用者のいる座標の","italic":false}','{"text":"一番上にあるブロックにテレポートする。","italic":false}','{"text":"使用後は疲労で動けなくなる。","italic":false}']},CustomModelData:1} 1
+execute at @a[tag=crafted_exitrope] run playsound minecraft:block.anvil.use neutral @a ~ ~ ~ 1 2
+execute as @a[tag=crafted_exitrope] run tag @s remove crafted_exitrope
+execute as @a[tag=miss_crafted_exitrope] run tellraw @s "素材が不足しています"
+execute at @a[tag=miss_crafted_exitrope] run playsound minecraft:entity.villager.no neutral @a ~ ~ ~ 1 1
+execute as @a[tag=miss_crafted_exitrope] run tag @s remove miss_crafted_exitrope
+execute as @a[scores={craft_exitrope=1}] run scoreboard players set @s GUIother 1
+execute as @a[scores={craft_exitrope=1}] run scoreboard players set @s craft_exitrope 0
+
+#hunting eye
+execute as @a[scores={craft_hunting_eye=1}] store result score @a have_glass run clear @s minecraft:glass 0
+execute as @a[scores={craft_hunting_eye=1}] store result score @a have_spider_eye run clear @s minecraft:spider_eye 0
+execute as @a[scores={craft_hunting_eye=1,have_glass=1..,have_spider_eye=1..}] run tag @s add crafted_hunting_eye
+execute as @a[scores={craft_hunting_eye=1,have_glass=..0}] run tag @s add miss_crafted_hunting_eye
+execute as @a[scores={craft_hunting_eye=1,have_spider_eye=..0}] run tag @s add miss_crafted_hunting_eye
+execute as @a[tag=crafted_hunting_eye] run clear @s minecraft:glass 1
+execute as @a[tag=crafted_hunting_eye] run clear @s minecraft:spider_eye 1
+execute as @a[tag=crafted_hunting_eye] run give @s minecraft:carrot_on_a_stick{display:{Name:'[{"text":"Hunting eye","italic":false}]',Lore:['{"text":"使用者のから20m以内の","italic":false}','{"text":"相手プレイヤーに発光効果を","italic":false}','{"text":"10秒付与する","italic":false}']},CustomModelData:2} 1
+execute at @a[tag=crafted_hunting_eye] run playsound minecraft:block.anvil.use neutral @a ~ ~ ~ 1 2
+execute as @a[tag=crafted_hunting_eye] run tag @s remove crafted_hunting_eye
+execute as @a[tag=miss_crafted_hunting_eye] run tellraw @s "素材が不足しています"
+execute at @a[tag=miss_crafted_hunting_eye] run playsound minecraft:entity.villager.no neutral @a ~ ~ ~ 1 1
+execute as @a[tag=miss_crafted_hunting_eye] run tag @s remove miss_crafted_hunting_eye
+execute as @a[scores={craft_hunting_eye=1}] run scoreboard players set @s GUIother 1
+execute as @a[scores={craft_hunting_eye=1}] run scoreboard players set @s craft_hunting_eye 0
 
 #mainが1の時に開く
 execute at @a[scores={GUImain=1}] run item replace entity @e[type=minecraft:chest_minecart,limit=1,sort=nearest] container.10 with minecraft:iron_sword{display:{Name:'{"text":"武器","italic":false}'}}
@@ -262,6 +299,36 @@ execute at @a[scores={GUIpotion=1}] run item replace entity @e[type=minecraft:ch
 execute at @a[scores={GUIpotion=1}] run item replace entity @e[type=minecraft:chest_minecart,limit=1,sort=nearest] container.26 with minecraft:barrier{display:{Name:'{"text":"メインに戻る","italic":false}'}}
 execute as @a[scores={GUIpotion=1}] run scoreboard players set @s GUIpotion 0
 
+#GUIotherが1の時開く
+execute at @a[scores={GUIother=1}] run item replace entity @e[type=minecraft:chest_minecart,limit=1,sort=nearest] container.0 with minecraft:blue_stained_glass_pane{display:{Name:'{"text":"other","italic":false}'}}
+execute at @a[scores={GUIother=1}] run item replace entity @e[type=minecraft:chest_minecart,limit=1,sort=nearest] container.1 with minecraft:blue_stained_glass_pane{display:{Name:'{"text":"other","italic":false}'}}
+execute at @a[scores={GUIother=1}] run item replace entity @e[type=minecraft:chest_minecart,limit=1,sort=nearest] container.2 with minecraft:blue_stained_glass_pane{display:{Name:'{"text":"other","italic":false}'}}
+execute at @a[scores={GUIother=1}] run item replace entity @e[type=minecraft:chest_minecart,limit=1,sort=nearest] container.3 with minecraft:blue_stained_glass_pane{display:{Name:'{"text":"other","italic":false}'}}
+execute at @a[scores={GUIother=1}] run item replace entity @e[type=minecraft:chest_minecart,limit=1,sort=nearest] container.4 with minecraft:blue_stained_glass_pane{display:{Name:'{"text":"other","italic":false}'}}
+execute at @a[scores={GUIother=1}] run item replace entity @e[type=minecraft:chest_minecart,limit=1,sort=nearest] container.5 with minecraft:blue_stained_glass_pane{display:{Name:'{"text":"other","italic":false}'}}
+execute at @a[scores={GUIother=1}] run item replace entity @e[type=minecraft:chest_minecart,limit=1,sort=nearest] container.6 with minecraft:blue_stained_glass_pane{display:{Name:'{"text":"other","italic":false}'}}
+execute at @a[scores={GUIother=1}] run item replace entity @e[type=minecraft:chest_minecart,limit=1,sort=nearest] container.7 with minecraft:blue_stained_glass_pane{display:{Name:'{"text":"other","italic":false}'}}
+execute at @a[scores={GUIother=1}] run item replace entity @e[type=minecraft:chest_minecart,limit=1,sort=nearest] container.8 with minecraft:blue_stained_glass_pane{display:{Name:'{"text":"other","italic":false}'}}
+execute at @a[scores={GUIother=1}] run item replace entity @e[type=minecraft:chest_minecart,limit=1,sort=nearest] container.9 with minecraft:blue_stained_glass_pane{display:{Name:'{"text":"other","italic":false}'}}
+execute at @a[scores={GUIother=1}] run item replace entity @e[type=minecraft:chest_minecart,limit=1,sort=nearest] container.10 with minecraft:carrot_on_a_stick{display:{Name:'[{"text":"脱出用ロープを作る","italic":false}]',Lore:['{"text":"使用者のいる座標の","italic":false}','{"text":"一番上にあるブロックにテレポートする。","italic":false}','{"text":"使用後は疲労で動けなくなる。","italic":false}','{"text":""}','{"text":"[必要素材]","italic":false}','{"text":"蜘蛛の糸x2","italic":false}','{"text":"羽x1","italic":false}']},CustomModelData:1}
+execute at @a[scores={GUIother=1}] run item replace entity @e[type=minecraft:chest_minecart,limit=1,sort=nearest] container.11 with minecraft:carrot_on_a_stick{display:{Name:'[{"text":"Hunting eyeを作る","italic":false}]',Lore:['{"text":"使用者のから20m以内の","italic":false}','{"text":"相手プレイヤーに発光効果を","italic":false}','{"text":"10秒付与する","italic":false}','{"text":""}','{"text":"[必要素材]","italic":false}','{"text":"蜘蛛の目x1","italic":false}','{"text":"ガラスx1","italic":false}']},CustomModelData:2}
+execute at @a[scores={GUIother=1}] run item replace entity @e[type=minecraft:chest_minecart,limit=1,sort=nearest] container.12 with minecraft:blue_stained_glass_pane{display:{Name:'{"text":"other","italic":false}'}}
+execute at @a[scores={GUIother=1}] run item replace entity @e[type=minecraft:chest_minecart,limit=1,sort=nearest] container.13 with minecraft:blue_stained_glass_pane{display:{Name:'{"text":"other","italic":false}'}}
+execute at @a[scores={GUIother=1}] run item replace entity @e[type=minecraft:chest_minecart,limit=1,sort=nearest] container.14 with minecraft:blue_stained_glass_pane{display:{Name:'{"text":"other","italic":false}'}}
+execute at @a[scores={GUIother=1}] run item replace entity @e[type=minecraft:chest_minecart,limit=1,sort=nearest] container.15 with minecraft:blue_stained_glass_pane{display:{Name:'{"text":"other","italic":false}'}}
+execute at @a[scores={GUIother=1}] run item replace entity @e[type=minecraft:chest_minecart,limit=1,sort=nearest] container.16 with minecraft:blue_stained_glass_pane{display:{Name:'{"text":"other","italic":false}'}}
+execute at @a[scores={GUIother=1}] run item replace entity @e[type=minecraft:chest_minecart,limit=1,sort=nearest] container.17 with minecraft:blue_stained_glass_pane{display:{Name:'{"text":"other","italic":false}'}}
+execute at @a[scores={GUIother=1}] run item replace entity @e[type=minecraft:chest_minecart,limit=1,sort=nearest] container.18 with minecraft:blue_stained_glass_pane{display:{Name:'{"text":"other","italic":false}'}}
+execute at @a[scores={GUIother=1}] run item replace entity @e[type=minecraft:chest_minecart,limit=1,sort=nearest] container.19 with minecraft:blue_stained_glass_pane{display:{Name:'{"text":"other","italic":false}'}}
+execute at @a[scores={GUIother=1}] run item replace entity @e[type=minecraft:chest_minecart,limit=1,sort=nearest] container.20 with minecraft:blue_stained_glass_pane{display:{Name:'{"text":"other","italic":false}'}}
+execute at @a[scores={GUIother=1}] run item replace entity @e[type=minecraft:chest_minecart,limit=1,sort=nearest] container.21 with minecraft:blue_stained_glass_pane{display:{Name:'{"text":"other","italic":false}'}}
+execute at @a[scores={GUIother=1}] run item replace entity @e[type=minecraft:chest_minecart,limit=1,sort=nearest] container.22 with minecraft:blue_stained_glass_pane{display:{Name:'{"text":"other","italic":false}'}}
+execute at @a[scores={GUIother=1}] run item replace entity @e[type=minecraft:chest_minecart,limit=1,sort=nearest] container.23 with minecraft:blue_stained_glass_pane{display:{Name:'{"text":"other","italic":false}'}}
+execute at @a[scores={GUIother=1}] run item replace entity @e[type=minecraft:chest_minecart,limit=1,sort=nearest] container.24 with minecraft:blue_stained_glass_pane{display:{Name:'{"text":"other","italic":false}'}}
+execute at @a[scores={GUIother=1}] run item replace entity @e[type=minecraft:chest_minecart,limit=1,sort=nearest] container.25 with minecraft:blue_stained_glass_pane{display:{Name:'{"text":"other","italic":false}'}}
+execute at @a[scores={GUIother=1}] run item replace entity @e[type=minecraft:chest_minecart,limit=1,sort=nearest] container.26 with minecraft:barrier{display:{Name:'{"text":"メインに戻る","italic":false}'}}
+execute as @a[scores={GUIother=1}] run scoreboard players set @s GUIother 0
+
 #コンパス持ってるときだけチェストロッコ呼び出し
 scoreboard players add @a[nbt={SelectedItem:{id:"minecraft:compass"}}] have_compass 1
 scoreboard players set @a[nbt=!{SelectedItem:{id:"minecraft:compass"}}] have_compass 0
@@ -269,3 +336,6 @@ execute at @a[scores={have_compass=1}] run summon minecraft:chest_minecart ~ ~1.
 execute at @a[scores={have_compass=1..}] run tp @e[tag=GUI,limit=1,distance=0..3,sort=nearest] ~ ~1.2 ~
 execute as @a[scores={have_compass=1}] run scoreboard players set @s GUImain 1
 execute at @a[scores={have_compass=0}] run tp @e[tag=GUI,distance=..3] ~ ~-256 ~
+
+#ガラス削除
+clear @a 
