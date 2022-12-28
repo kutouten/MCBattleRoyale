@@ -47,4 +47,4 @@ scoreboard players set @a craft_protein 0
 scoreboard players set @a craft_octane_potion 0
 
 #GUI表示用のトロッコを16個召喚
-execute as @e[limit=16] run summon minecraft:chest_minecart 0 256 0 {Tags:[GUI],Invulnerable:true,Silent:true,NoGravity:true}
+execute as @e[limit=16] run summon minecraft:chest_minecart 0 256 0 {CustomName:'{"text":"SHC_menu"}',Tags:[GUI],Invulnerable:true,Silent:true,NoGravity:true}
