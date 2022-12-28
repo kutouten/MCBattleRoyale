@@ -196,11 +196,9 @@ execute at @a[scores={GUIpotion=1}] run item replace entity @e[type=minecraft:ch
 execute as @a[scores={GUIpotion=1}] run scoreboard players set @s GUIpotion 0
 
 #コンパス持ってるときだけチェストロッコ呼び出し
-scoreboard players set @r[scores={have_compass=0}] GUI_reset 0
 scoreboard players add @a[nbt={SelectedItem:{id:"minecraft:compass"}}] have_compass 1
 scoreboard players set @a[nbt=!{SelectedItem:{id:"minecraft:compass"}}] have_compass 0
-execute at @a[scores={have_compass=0}] run tp @e[tag=GUI,distance=..5] 0 256 0
-execute at @a[scores={have_compass=1}] run tp @e[tag=GUI,limit=1,sort=nearest,x=0,y=256,z=0] ~ ~1.2 ~
-execute at @e[tag=GUI] run scoreboard players add @a[distance=..2] GUI_reset 1
-execute as @a[scores={GUI_reset=1}] run scoreboard players set @s GUImain 1
-execute at @a[scores={have_compass=1..}] run tp @e[tag=GUI,limit=1,distance=0..5,sort=nearest] ~ ~1.2 ~
+execute at @a[scores={have_compass=1}] run summon minecraft:chest_minecart ~ ~1.2 ~ {CustomName:'{"text":"SHC_menu"}',Tags:[GUI],Invulnerable:true,Silent:true,NoGravity:true}
+execute at @a[scores={have_compass=1..}] run tp @e[tag=GUI,limit=1,distance=0..3,sort=nearest] ~ ~1.2 ~
+execute as @a[scores={have_compass=1}] run scoreboard players set @s GUImain 1
+execute at @a[scores={have_compass=0}] run tp @e[tag=GUI,distance=..3] ~ ~-256 ~
