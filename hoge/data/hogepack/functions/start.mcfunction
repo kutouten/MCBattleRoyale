@@ -34,3 +34,22 @@ spreadplayers ~ ~ 50 1000 false @a
 #途中参加用にゲームモードのデフォをスペクテイターに
 defaultgamemode spectator
 
+#スコアボードの値を一度0にセット（必ずやれ）
+scoreboard players set @a have_compass 0
+scoreboard players set @a GUI_reset 0
+scoreboard players set @a GUImain 0
+scoreboard players set @a GUIbuki 0
+scoreboard players set @a GUIbougu 0
+scoreboard players set @a GUIpotion 0
+scoreboard players set @a GUIother 0
+
+scoreboard players set @a craft_copper_helmet 0
+scoreboard players set @a craft_copper_chestplate 0
+scoreboard players set @a craft_copper_leggings 0
+scoreboard players set @a craft_copper_boots 0
+scoreboard players set @a craft_apple_potion 0
+scoreboard players set @a craft_shield_potion 0
+scoreboard players set @a craft_protein 0
+scoreboard players set @a craft_octane_potion 0
+scoreboard players set @a craft_hunting_eye 0
+scoreboard players set @a craft_exitrope 0
