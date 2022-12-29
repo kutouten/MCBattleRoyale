@@ -34,7 +34,7 @@ spreadplayers ~ ~ 50 1000 false @a
 #途中参加用にゲームモードのデフォをスペクテイターに
 defaultgamemode spectator
 #参加者はサバイバルに
-gamemode survival @a
+gamemode survival @a[tag=!admin]
 
 #スコアボードの値を一度0にセット（必ずやれ）
 scoreboard players set @a have_compass 0
